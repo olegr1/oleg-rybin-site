@@ -1,0 +1,54 @@
+---
+layout: layouts/base.html
+---
+
+<header>
+    <img src="{{resume.contents.photo}}" alt="photo of Oleg Rybin">
+    <h1>{{resume.contents.name}} | {{resume.contents.role}}</h1>    
+    <p>{{resume.contents.intro}}</p>
+</header>
+
+<main>
+    <h2>Key skills and years of experience</h2>
+
+    <ul>
+        {% for skill in resume.contents.skills %}
+        <li>{{ skill.name }}: {{ skill.years }} y</li>
+        {% endfor %}
+    </ul>
+
+    <section>
+    <h2>Work experience</h2>
+
+    {% for item in resume.contents.workExperience %}
+
+    <article>
+        <h3>{{ item.role }} at {{ item.companyName }} - {{ item.location.city }}, {{ item.location.country }}</h3>
+        <p>{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
+
+        <h4>Responsibilities</h4>
+        <ul>
+            {% for responsibility in item.responsibilities %}
+            <li>
+                {{responsibility}}
+            </li>
+            {% endfor %}
+        </ul>
+
+
+        {% if item.highlights | length %}
+        <h4>Highlights</h4>
+        <ul>
+            {% for highlight in item.highlights %}
+            <li>
+                {{highlight}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <article>   
+
+    {% endfor %}
+
+    </section>
+</main>

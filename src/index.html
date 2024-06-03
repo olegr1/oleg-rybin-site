@@ -2,7 +2,7 @@
 layout: layouts/base.html
 ---
 
-<header class="or-header">
+<header class="or-header" id="orTop">
     <div class="container">
         <div class="or-header-content">
 
@@ -35,7 +35,7 @@ layout: layouts/base.html
     </div>    
 </header>
 
-<main tabindex="-1" id="main">
+<main tabindex="-1" id="orMain">
 
     <section class="or-section"> 
         <div class="container">
@@ -45,8 +45,13 @@ layout: layouts/base.html
                 {% for skill in resume.contents.skills %}
                 <li class="or-skill">
                     <div class="or-skill-name">{{ skill.name }}<span class="or-skill-years-mb">- {{ skill.years }} years</span></div>
-                    <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
-                    <span class="or-skill-years-dt">{{ skill.years }} years</span>
+                    
+                    <div class="or-skill-bar-wrap">
+                        <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
+                    </div> 
+                    <div class="or-skill-years-wrap">
+                        <span class="or-skill-years-dt">{{ skill.years }} years</span>
+                    </div>            
                 </li>
                 {% endfor %}
             </ul>
@@ -54,43 +59,51 @@ layout: layouts/base.html
         
     </section>
 
-    <section>
+    <section class="or-section">
         <div class="container">
             <h2 class="or-section-header">Employment history</h2>
 
             {% for item in resume.contents.workExperience %}
     
             <article class="or-subsecton">
-                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> {{ item.companyName }} <span class="or-section-subheader-extra"> <svg tabindex="-1" class="or-location-icon" focusable="false" aria-hidden="true">
-                    <use tabindex="-1" focusable="false" xlink:href="#icon-location"></use>
-                </svg> {{ item.location.city }}, {{ item.location.country }}</span></h3>
-                
+
                 <p class="or-section-duration">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
+
+                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> <span class="or-company-name">{{ item.companyName }}</span> <span class="or-section-subheader-extra"> <svg tabindex="-1" class="or-location-icon" focusable="false" aria-hidden="true">
+                    <use tabindex="-1" focusable="false" xlink:href="#icon-location"></use>
+                </svg> {{ item.location.city }}, {{ item.location.country }}</span></h3>    
     
-                <h4 class="or-section-heading-small">Responsibilities</h4>
-                <ul class="or-list">
-                    {% for responsibility in item.responsibilities %}
-                    <li>
-                        {{responsibility}}
-                    </li>
-                    {% endfor %}
-                </ul>    
-    
-                {% if item.highlights | length %}
-                    <h4 class="or-section-heading-small">Highlights</h4>
+                <div class="or-subsecton-wrap">
+                    <h4 class="or-section-heading-small">Responsibilities</h4>
                     <ul class="or-list">
-                        {% for highlight in item.highlights %}
+                        {% for responsibility in item.responsibilities %}
                         <li>
-                            {{highlight}}
+                            {{responsibility}}
                         </li>
                         {% endfor %}
-                    </ul>
-                {% endif %}
+                    </ul>    
+        
+                    {% if item.highlights | length %}
+                        <h4 class="or-section-heading-small">Highlights</h4>
+                        <ul class="or-list">
+                            {% for highlight in item.highlights %}
+                            <li>
+                                {{highlight}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
             
                 </article>
 
     
             {% endfor %}
+
+            
+           
+
         </div>
         
 
@@ -98,3 +111,12 @@ layout: layouts/base.html
 
             
 </main>
+
+<footer class="or-footer">
+    <div class="container">
+        <div class="or-footer-content">
+            <a class="or-back-to-top-link" href="#orTop">Back to top</a>
+            <div class="or-footer-copyright">© Oleg Rybin, 2024</div>
+        </div>        
+    </div>
+</footer>

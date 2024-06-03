@@ -7,9 +7,23 @@
   <meta name="description" content="{{resume.contents.intro}}" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script>
   
 </head>
 <body>
+  <a href="#main" class="or-skip-to-main">Skip to main content</a>
   {{ content | safe }}
+
+
+  <svg tabindex="-1" focusable="false" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="icon-print" viewBox="0 0 30 30">
+            <path d="M7.64 2.12h14.72V5.8H7.64V2.12zM27.88 7.64H2.12c-1.01 0-1.84.83-1.84 1.84v9.2c0 1.01.83 1.84 1.84 1.84h5.52v7.36h14.72v-7.36h5.52c1.01 0 1.84-.83 1.84-1.84v-9.2c0-1.01-.83-1.84-1.84-1.84zM3.96 13.16c-1.02 0-1.84-.82-1.84-1.84s.82-1.84 1.84-1.84 1.84.82 1.84 1.84-.82 1.84-1.84 1.84zm16.56 12.88H9.48v-9.2h11.04v9.2z"></path>
+        </symbol>
+        <symbol id="icon-location" viewBox="0 0 30 30">
+          <path d="M15 .21c-5.11 0-9.25 4.14-9.25 9.25C5.75 18.7 15 29.79 15 29.79s9.25-11.09 9.25-20.34c0-5.1-4.14-9.24-9.25-9.24zM15 15c-3.06 0-5.55-2.48-5.55-5.55S11.94 3.91 15 3.91s5.55 2.48 5.55 5.55S18.06 15 15 15z"></path>
+      </symbol>
+    </defs>
+</svg>
 </body>
 </html>

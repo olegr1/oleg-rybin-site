@@ -1,17 +1,20 @@
 {
     "contents": {
         "name": "Oleg Rybin",
-        "role": "UI Development Professional and Technology Generalist",
-        "intro": "Oleg is a senior front-end web developer with nearly 20 years of professional experience in industries such as telecommunications, retail, on-demand printing, marketing and e-commerce.",
+        "role": "UI Development Professional",
+        "intro": ["Oleg is a senior front-end web developer with nearly 20 years of professional experience in industries such as telecommunications, retail, on-demand printing, marketing and e-commerce.",
+        "His skills range from the hands-on creation of complex UI components using JavaScript, CSS, and HTML to architecting custom UI frameworks.",
+        "Oleg's years of experience, coupled with his excellent communication skills, allow him to seamlessly integrate into any team and deliver standard-compliant web applications, regardless of the client's technology stack and development methodology."],
         "photo": "oleg_rybin.jpg",
         "skills": [
             {"name": "HTML", "percentage": "100", "years": "20" },
             {"name": "CSS", "percentage": "100", "years": "20" },
+            {"name": "Image editing", "percentage": "100", "years": "20" },             
             {"name": "JavaScript", "percentage": "100", "years": "15" }, 
-            {"name": "Image editing", "percentage": "100", "years": "20" }, 
-            {"name": "Content Management Systems", "percentage": "100", "years": "15" },
+            {"name": "Content management systems", "percentage": "100", "years": "15" },
             {"name": "Server-side templating", "percentage": "100", "years": "15" },
-            {"name": "Accessibility", "percentage": "100", "years": "5" }
+            {"name": "Web accessibility", "percentage": "100", "years": "5" },
+            {"name": "Web performance", "percentage": "100", "years": "5" }
         ],
         "workExperience": [
             {

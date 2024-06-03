@@ -5,8 +5,16 @@ layout: layouts/base.html
 <header class="or-header">
     <div class="container">
         <div class="or-header-content">
+
+            <button onClick="window.print()" class="or-print-button">
+                <svg tabindex="-1" focusable="false" aria-hidden="true">
+                    <use tabindex="-1" focusable="false" xlink:href="#icon-print"></use>
+                </svg>
+                Print
+            </button>
+
             <div class="or-header-photo-wrap">
-                <img class="or-header-photo" src="/assets/images/{{resume.contents.photo}}" alt="photo of Oleg Rybin">
+                <img class="or-header-photo" src="/assets/images/{{resume.contents.photo}}" width="92" height="92" alt="photo of Oleg Rybin">
             </div>        
             <h1 class="or-header-title">
                 <span class="or-header-title-main">{{resume.contents.name}}</span>
@@ -18,21 +26,28 @@ layout: layouts/base.html
                 <span  class="or-contacts-delimeter">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                 <a href="tel:+16474011468" class="or-contacts-phone or-nobr">+1 (647) 401<span>401</span>-1468</a>
             </p>
-            <p class="or-intro">
-                {{resume.contents.intro}}
-            </p>
+            <div class="or-intro">
+                {% for paragraph in resume.contents.intro %}
+                <p>{{paragraph}}</p>
+                {% endfor %}
+            </div>
         </div>
     </div>    
 </header>
 
-<main>
+<main tabindex="-1" id="main">
 
     <section class="or-section"> 
         <div class="container">
+            <span id="orSkillsMarker"></span>
             <h2 class="or-section-header">Key skills and years of experience</h2>
-            <ul class="or-skill-list">
+            <ul class="or-skill-list" id="orSkillList">
                 {% for skill in resume.contents.skills %}
-                <li>{{ skill.name }}: {{ skill.years }} y</li>
+                <li class="or-skill">
+                    <div class="or-skill-name">{{ skill.name }}<span class="or-skill-years-mb">- {{ skill.years }} years</span></div>
+                    <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
+                    <span class="or-skill-years-dt">{{ skill.years }} years</span>
+                </li>
                 {% endfor %}
             </ul>
         </div>
@@ -46,7 +61,9 @@ layout: layouts/base.html
             {% for item in resume.contents.workExperience %}
     
             <article class="or-subsecton">
-                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> {{ item.companyName }} <span class="or-section-subheader-extra"> - {{ item.location.city }}, {{ item.location.country }}</span></h3>
+                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> {{ item.companyName }} <span class="or-section-subheader-extra"> <svg tabindex="-1" class="or-location-icon" focusable="false" aria-hidden="true">
+                    <use tabindex="-1" focusable="false" xlink:href="#icon-location"></use>
+                </svg> {{ item.location.city }}, {{ item.location.country }}</span></h3>
                 
                 <p class="or-section-duration">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
     
@@ -57,8 +74,7 @@ layout: layouts/base.html
                         {{responsibility}}
                     </li>
                     {% endfor %}
-                </ul>
-    
+                </ul>    
     
                 {% if item.highlights | length %}
                     <h4 class="or-section-heading-small">Highlights</h4>

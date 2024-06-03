@@ -1,13 +1,67 @@
 @import url(reset.css);
 
+html {
+    --body-bg: #222120;
+    --text-color-main: #fff6e6;
+    --highlight-color-main: #71e7ca;
+    --highlight-color-focus: #71e7ca;
+}
+
+.or-skip-to-main {
+    display: block;
+    padding: 5px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transition: top .3s ease;
+    color: var(--text-color-main);
+    font-size: 14px;
+}
+
+.or-skip-to-main:focus {
+    top: 0;
+}
+
+*:focus {
+    outline: 2px solid var(--highlight-color-focus);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 body {
-    background-color: #202020;
-    color: #e2e2e2;
+    background-color: var(--body-bg);
+    color: var(--text-color-main);
     font-family: sans-serif;
 }
 
 .or-nobr{
     white-space: nowrap;
+}
+
+.or-print-button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color-main);
+    font-size: 12px;
+    text-decoration: underline;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.or-print-button svg{
+    fill: var(--text-color-main);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .or-list {
@@ -17,10 +71,11 @@ body {
 }
 
 .or-list > li {
-    margin:0 30px 10px;
+    margin: 0 0 10px 30px;
     padding: 0;
     position: relative;
-    color: #b6b6b6;
+    color: var(--text-color-main);
+    opacity: .85;
 }
 
 .or-list > li::before {
@@ -49,10 +104,19 @@ body {
     text-align: center;
 }
 
+.or-intro p{
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.or-intro p:last-of-type {
+    margin-bottom: 0;
+}
+
 .or-header-photo-wrap {
     width: 100px;
     height: 100px;
-    border: 4px solid #FFF;
+    border: 4px solid var(--text-color-main);
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -61,6 +125,8 @@ body {
 }
 
 .or-header-photo {
+    width: 100%;
+    height: 100%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -78,7 +144,8 @@ body {
 
 .or-contacts-email,
 .or-contacts-phone{
-    display: block;
+    display: block;    
+    color: var(--highlight-color-main);
 }
 
 .or-contacts-email span,
@@ -98,7 +165,7 @@ body {
 .or-header-title-subtitle {
     font-size: 18px;
     display: block;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .or-section {
@@ -107,9 +174,9 @@ body {
 
 .or-section-header {
     font-size: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-top: 30px;
-    border-top: 5px solid #464646;
+    border-top: 3px solid #464646;
 }
 
 .or-section-subheader {
@@ -121,8 +188,11 @@ body {
 
 .or-section-subheader-extra {
     font-size: 14px;
-    color: #8c8c8c;
+    color: var(--text-color-main);
     font-weight: normal;
+    opacity: .7;
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
 .or-section-subheader-small-text {
@@ -131,26 +201,35 @@ body {
     font-weight: normal;
 }
 
+.or-location-icon {
+    height: 15px;
+    width: 15px;
+    fill: var(--highlight-color-main);
+    display: inline;
+}
+
 .or-section-heading-small {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 15px;
+    
 }
 
 .or-section-duration {
     font-size: 14px;
-    font-style: italic;
-    margin-bottom: 15px;
-    border: 1px solid #fff;
+    margin-bottom: 15px;    
+    color: var(--text-color-main);
+    border: 1px solid var(--text-color-main);
     display: inline-block;
-    padding: 5px 10px;
+    padding: 2px 10px;
     border-radius: 5px;
+    opacity: .8;
 }
 
 .or-subsecton {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #3b3b3b;
+    border-bottom: 1px dotted var(--text-color-main);
 }
 
 .or-subsecton:last-of-type {
@@ -159,7 +238,42 @@ body {
 
 .or-skill-list {
     margin-bottom: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
+.or-skill {
+    margin-bottom: 10px;
+}
+
+.or-skill-bar {
+    height: 6px;
+    background-color: var(--highlight-color-main);
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    width: 0;
+    transition: width 1.5s ease;    
+    transition-delay: .5s;
+    border-radius: 2px;
+}
+
+.or-skill-years-dt,
+.or-skill-years-mb {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-color-main);
+    display: block;
+    margin-left: 10px;
+    display: none;
+}
+
+.or-skill-years-mb {
+    display: inline-block;
+    margin-left: 5px;
+}
+
 
 @media (min-width: 640px){
 
@@ -179,11 +293,10 @@ body {
 
     .or-header {
         padding: 45px 0;
-    }
-    
+    }    
     
     .or-subsecton {
-        margin-bottom: 45px;
+        margin-bottom: 30px;
     }
 
     .or-header-photo-wrap {
@@ -198,7 +311,6 @@ body {
     .or-contacts-email,
     .or-contacts-phone{
         display: inline;
-        color: #fff;
     }
 
     .or-contacts-delimeter {
@@ -208,6 +320,23 @@ body {
     .or-section {
         margin-bottom: 45px;
     }
+
+    .or-skill {
+        margin-bottom: 10px;
+        display: flex;
+    }
+    
+    .or-skill-name {
+        width: 50%;
+    }
+
+    .or-skill-years-mb {
+        display: none;
+    }
+    
+    .or-skill-years-dt {
+        display: block;
+    }
     
 }
 
@@ -216,6 +345,27 @@ body {
 
     * {
         color: #000;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .or-print-button {
+        display: none;
+    }
+
+    .or-section {
+        margin-bottom: 15px;
+    }
+
+    .or-header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .or-intro p {
+        margin-bottom: 5px;
     }
 
     .or-header-photo-wrap {
@@ -240,6 +390,8 @@ body {
     .or-contacts-phone {
         display: inline;
         text-decoration: none;
+        color: #000;
+        font-size: 13px;
     }
 
     .or-section-header {
@@ -257,26 +409,60 @@ body {
 
     .or-section-subheader {
         font-size: 16px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+    }
+
+    .or-section-subheader-extra {
+        color: #444;
+        font-size: 12px;
+    }
+
+    .or-location-icon {
+        width: 12px;
+        height: 12px;
+        fill: #444;
     }
 
     .or-section-duration {
         font-size: 12px;
         font-style: italic;
         margin-bottom: 10px;
-        border: 1px solid #e1e1e1;
+        border: none;
         display: inline-block;
-        padding: 3px 5px;
+        padding: 0;
         border-radius: 3px;
+        color: #444;
     }
 
     .or-section-heading-small {
         font-size: 14px;
+        margin-bottom: 5px;
     }
 
     .or-subsecton {
         margin-bottom: 15px;
         padding-bottom: 10px;
         border-bottom: 1px solid #e1e1e1;
+    }
+
+    .or-skill-list {
+        display: flex;
+        flex-wrap: wrap;
+    }    
+
+    .or-skill {
+        font-size: 13px;
+        margin-bottom: 3px;
+        width: 50%;
+        padding-right: 15px;
+    }
+
+    .or-skill-years-dt,
+    .or-skill-years-mb {
+        color: #000;
+    }
+
+    .or-skill-bar {
+        display: none;
     }
 }

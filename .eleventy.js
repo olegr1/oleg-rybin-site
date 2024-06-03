@@ -11,9 +11,13 @@ module.exports = function(eleventyConfig) {
 
       const date = new Date(year, parseInt(month) - 1);
       const formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
-      
+
       return formattedDate;
   });
+
+  eleventyConfig.addPassthroughCopy("src/assets/");
+
+  eleventyConfig.addWatchTarget("src/assets/css/");
 
   return {
     dir: {

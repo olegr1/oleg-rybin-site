@@ -8,7 +8,7 @@
             {"name": "HTML", "percentage": "100", "years": "20" },
             {"name": "CSS", "percentage": "100", "years": "20" },
             {"name": "JavaScript", "percentage": "100", "years": "15" }, 
-            {"name": "Image editing", "percentage": "100", "years": "25" }, 
+            {"name": "Image editing", "percentage": "100", "years": "20" }, 
             {"name": "Content Management Systems", "percentage": "100", "years": "15" },
             {"name": "Server-side templating", "percentage": "100", "years": "15" },
             {"name": "Accessibility", "percentage": "100", "years": "5" }
@@ -151,8 +151,8 @@
                 "technologies": "HTML, CSS, Photoshop, 3DS MAX"
             },
             {
-                "companyName": "Graphic Designer",
-                "role": "Dmax",
+                "companyName": "Dmax",
+                "role": "Graphic Designer",
                 "duration": {
                     "startDate": "2002-01",
                     "endDate": "2003-01"

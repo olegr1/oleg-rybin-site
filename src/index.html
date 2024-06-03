@@ -2,53 +2,83 @@
 layout: layouts/base.html
 ---
 
-<header>
-    <img src="{{resume.contents.photo}}" alt="photo of Oleg Rybin">
-    <h1>{{resume.contents.name}} | {{resume.contents.role}}</h1>    
-    <p>{{resume.contents.intro}}</p>
+<header class="or-header">
+    <div class="container">
+        <div class="or-header-content">
+            <div class="or-header-photo-wrap">
+                <img class="or-header-photo" src="/assets/images/{{resume.contents.photo}}" alt="photo of Oleg Rybin">
+            </div>        
+            <h1 class="or-header-title">
+                <span class="or-header-title-main">{{resume.contents.name}}</span>
+                <span class="or-header-title-subtitle">{{resume.contents.role}}</span>            
+            </h1>    
+            
+            <p class="or-contacts">
+                <a class="or-contacts-email or-nobr" href="mailto:&#x6F;&#x6C;&#x65;&#x67;&period;&#x72;&#x79;&#x62;&#x69;&#x6E;&commat;&#x67;&#x6D;&#x69;&#x6C;&period;&#x63;&#x6F;&#x6D;">oleg.rybin@gmail<span>.gmail</span>.com</a>
+                <span  class="or-contacts-delimeter">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <a href="tel:+16474011468" class="or-contacts-phone or-nobr">+1 (647) 401<span>401</span>-1468</a>
+            </p>
+            <p class="or-intro">
+                {{resume.contents.intro}}
+            </p>
+        </div>
+    </div>    
 </header>
 
 <main>
-    <h2>Key skills and years of experience</h2>
 
-    <ul>
-        {% for skill in resume.contents.skills %}
-        <li>{{ skill.name }}: {{ skill.years }} y</li>
-        {% endfor %}
-    </ul>
+    <section class="or-section"> 
+        <div class="container">
+            <h2 class="or-section-header">Key skills and years of experience</h2>
+            <ul class="or-skill-list">
+                {% for skill in resume.contents.skills %}
+                <li>{{ skill.name }}: {{ skill.years }} y</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+    </section>
 
     <section>
-    <h2>Work experience</h2>
+        <div class="container">
+            <h2 class="or-section-header">Employment history</h2>
 
-    {% for item in resume.contents.workExperience %}
+            {% for item in resume.contents.workExperience %}
+    
+            <article class="or-subsecton">
+                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> {{ item.companyName }} <span class="or-section-subheader-extra"> - {{ item.location.city }}, {{ item.location.country }}</span></h3>
+                
+                <p class="or-section-duration">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
+    
+                <h4 class="or-section-heading-small">Responsibilities</h4>
+                <ul class="or-list">
+                    {% for responsibility in item.responsibilities %}
+                    <li>
+                        {{responsibility}}
+                    </li>
+                    {% endfor %}
+                </ul>
+    
+    
+                {% if item.highlights | length %}
+                    <h4 class="or-section-heading-small">Highlights</h4>
+                    <ul class="or-list">
+                        {% for highlight in item.highlights %}
+                        <li>
+                            {{highlight}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            
+                </article>
 
-    <article>
-        <h3>{{ item.role }} at {{ item.companyName }} - {{ item.location.city }}, {{ item.location.country }}</h3>
-        <p>{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
-
-        <h4>Responsibilities</h4>
-        <ul>
-            {% for responsibility in item.responsibilities %}
-            <li>
-                {{responsibility}}
-            </li>
+    
             {% endfor %}
-        </ul>
-
-
-        {% if item.highlights | length %}
-        <h4>Highlights</h4>
-        <ul>
-            {% for highlight in item.highlights %}
-            <li>
-                {{highlight}}
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    <article>   
-
-    {% endfor %}
+        </div>
+        
 
     </section>
+
+            
 </main>

@@ -1,0 +1,282 @@
+@import url(reset.css);
+
+body {
+    background-color: #202020;
+    color: #e2e2e2;
+    font-family: sans-serif;
+}
+
+.or-nobr{
+    white-space: nowrap;
+}
+
+.or-list {
+    margin: 0 0 15px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.or-list > li {
+    margin:0 30px 10px;
+    padding: 0;
+    position: relative;
+    color: #b6b6b6;
+}
+
+.or-list > li::before {
+    content: "•";
+    display: block;
+    position: absolute;
+    left: -30px;
+    top: 0;
+}
+
+.container {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.or-main-title {
+    font-size: 16px;
+}
+
+.or-header {
+    padding: 15px 0 30px 0;
+}
+
+.or-intro {
+    padding: 30px 0 0;
+    text-align: center;
+}
+
+.or-header-photo-wrap {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #FFF;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+
+.or-header-photo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.or-contacts {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.or-contacts-delimeter {
+    display: none;
+}
+
+.or-contacts-email,
+.or-contacts-phone{
+    display: block;
+}
+
+.or-contacts-email span,
+.or-contacts-phone span{
+    display: none;
+}
+
+.or-header-title-main {
+    font-size: 30px;
+    display: block;
+}
+
+.or-header-title {
+    text-align: center;
+}
+
+.or-header-title-subtitle {
+    font-size: 18px;
+    display: block;
+    margin-top: 15px;
+}
+
+.or-section {
+    margin-bottom: 30px;
+}
+
+.or-section-header {
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    border-top: 5px solid #464646;
+}
+
+.or-section-subheader {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.or-section-subheader-extra {
+    font-size: 14px;
+    color: #8c8c8c;
+    font-weight: normal;
+}
+
+.or-section-subheader-small-text {
+    font-size: 16px;
+    margin: 0 2px;
+    font-weight: normal;
+}
+
+.or-section-heading-small {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.or-section-duration {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.or-subsecton {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+.or-subsecton:last-of-type {
+    border-bottom: none;
+}
+
+.or-skill-list {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 640px){
+
+    .container {
+        padding: 0 30px;
+        width: 100%;
+    }    
+}
+
+@media (min-width: 992px){
+
+    .container {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .or-header {
+        padding: 45px 0;
+    }
+    
+    
+    .or-subsecton {
+        margin-bottom: 45px;
+    }
+
+    .or-header-photo-wrap {
+        width: 200px;
+        height: 200px;       
+    }
+
+    .or-header-title-main {
+        font-size: 40px;
+    }
+
+    .or-contacts-email,
+    .or-contacts-phone{
+        display: inline;
+        color: #fff;
+    }
+
+    .or-contacts-delimeter {
+        display: inline;
+    }
+    
+    .or-section {
+        margin-bottom: 45px;
+    }
+    
+}
+
+
+@media print {
+
+    * {
+        color: #000;
+    }
+
+    .or-header-photo-wrap {
+        display:none;
+    }
+
+    .or-header-title-main {
+        font-size: 25px;
+    }
+
+    .or-header-title-subtitle {
+        font-size: 16px;
+    }
+
+    .or-intro {
+        font-size: 12px;
+        padding-top: 15px;
+    }
+
+    .or-contacts-email,
+    .or-contacts-delimeter,
+    .or-contacts-phone {
+        display: inline;
+        text-decoration: none;
+    }
+
+    .or-section-header {
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e1e1e1;
+    }
+
+    .or-list > li {
+       margin-bottom: 1px!important;
+       font-size: 13px;
+       color: #111;
+    }
+
+    .or-section-subheader {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .or-section-duration {
+        font-size: 12px;
+        font-style: italic;
+        margin-bottom: 10px;
+        border: 1px solid #e1e1e1;
+        display: inline-block;
+        padding: 3px 5px;
+        border-radius: 3px;
+    }
+
+    .or-section-heading-small {
+        font-size: 14px;
+    }
+
+    .or-subsecton {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e1e1e1;
+    }
+}

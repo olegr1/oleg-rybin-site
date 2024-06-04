@@ -4,16 +4,17 @@
   <title>{{resume.contents.name}} | {{resume.contents.role}}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{resume.contents.intro}}" />
+  <meta name="description" content="{{resume.contents.intro[0]}}" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <script src="/assets/js/main.js"></script>
-  
+  {% set js %} {% include "main.js" %} {% endset %}
+  {% set css %} {% include "main.css" %} {% endset %}
+  <style>{{ css | cssmin | safe }}</style>
+  <script>{{ js | jsmin | safe }}</script>
 </head>
 <body>
   <a href="#orMain" class="or-skip-to-main-link">Skip to main content</a>
+  
   {{ content | safe }}
-
 
   <svg tabindex="-1" focusable="false" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
@@ -24,6 +25,7 @@
           <path d="M15 .21c-5.11 0-9.25 4.14-9.25 9.25C5.75 18.7 15 29.79 15 29.79s9.25-11.09 9.25-20.34c0-5.1-4.14-9.24-9.25-9.24zM15 15c-3.06 0-5.55-2.48-5.55-5.55S11.94 3.91 15 3.91s5.55 2.48 5.55 5.55S18.06 15 15 15z"></path>
       </symbol>
     </defs>
-</svg>
+  </svg>
+
 </body>
 </html>

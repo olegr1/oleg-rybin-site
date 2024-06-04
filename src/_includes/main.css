@@ -1,6 +1,5 @@
-@import url(reset.css);
-
 html {
+    color-scheme: dark;
     scroll-behavior: smooth;
 
     --body-bg: #222120;
@@ -9,6 +8,29 @@ html {
     --highlight-color-focus: var(--highlight-color-main);
     --border-color: #444;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}  
 
 .or-skip-to-main-link {
     display: block;
@@ -63,7 +85,7 @@ html {
     transition: .2s;
 }
 
-.or-skip-to-main:focus {
+.or-skip-to-main-link:focus {
     top: 0;
 }
 
@@ -488,10 +510,8 @@ main:focus {
     
     .or-skill-years-dt {
         display: block;
-    }
-    
+    }    
 }
-
 
 @media print {
 

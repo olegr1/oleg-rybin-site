@@ -38,7 +38,6 @@ layout: layouts/base.html
 
     <section class="or-section"> 
         <div class="container">
-            <span id="orSkillsMarker"></span>
             <h2 class="or-section-header">Key skills and years of experience</h2>
             <ul class="or-skill-list" id="orSkillList">
                 {% for skill in resume.contents.skills %}
@@ -66,7 +65,7 @@ layout: layouts/base.html
     
             <article class="or-subsecton">
 
-                <p class="or-section-duration">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</p>
+                <span class="or-section-duration">{{item.duration.startDate | getNumberOfYearsBetween(item.duration.endDate)}}</span><span class="or-section-duration-dates">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</span>
 
                 <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> <span class="or-company-name">{{ item.companyName }}</span> <span class="or-section-subheader-extra"> <svg tabindex="-1" class="or-location-icon" focusable="false" aria-hidden="true">
                     <use tabindex="-1" focusable="false" xlink:href="#icon-location"></use>
@@ -92,6 +91,11 @@ layout: layouts/base.html
                             {% endfor %}
                         </ul>
                     {% endif %}
+
+                    <h4 class="or-section-heading-small">Technologies</h4>
+                    <ul class="or-technologies">
+                        {{item.technologies | commaSeparatedToListItems | safe }}
+                    </ul>
                 </div>          
                 </article>    
             {% endfor %}           

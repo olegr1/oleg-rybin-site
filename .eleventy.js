@@ -19,6 +19,29 @@ module.exports = function(eleventyConfig) {
       return formattedDate;
   });
 
+  eleventyConfig.addFilter("getNumberOfYearsBetween", function(dateOne, dateTwo) { 
+
+    const date1 = new Date(dateOne);
+    const date2 = new Date(dateTwo);
+
+    const differenceMs = date2 - date1;
+    const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;
+    const years = differenceMs / millisecondsPerYear;
+    const roundedYears = Math.round(years);
+    const wording = roundedYears > 1 ? " years" : " year";
+    const numberOfYearsFinal = roundedYears + wording;
+
+    return numberOfYearsFinal;
+  });
+
+  eleventyConfig.addFilter("commaSeparatedToListItems", function(commaSeparatedString) { 
+
+    const itemsArray = commaSeparatedString.split(",");
+    const htmlList = itemsArray.map(item => `<li>${item}</li>`).join("");
+
+    return htmlList;
+  });
+
   eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
     try {
       const minified = await minify(code);

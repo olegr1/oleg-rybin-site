@@ -304,7 +304,8 @@ main:focus {
     
 }
 
-.or-section-duration {
+.or-section-duration,
+.or-section-duration-dates {
     font-size: 14px;
     margin-bottom: 15px;    
     color: var(--highlight-color-main);
@@ -313,6 +314,11 @@ main:focus {
     padding: 2px 10px;
     border-radius: 5px;
     position: relative;
+    background-color: #222c2a;
+}
+
+.or-section-duration {
+    margin-right: 7px;
 }
 
 .or-section-duration:before {
@@ -347,7 +353,7 @@ main:focus {
     border-left: 1px dashed var(--highlight-color-main);
     position: absolute;
     left: -22px;
-    top: 35px;
+    top: 28px;
 }
 
 .or-subsecton:last-of-type::before {
@@ -377,7 +383,7 @@ main:focus {
     position: relative;
     display: block;
     margin-top: 5px;
-    width: 5px;
+    width: 15px;
     transition: width 1.5s ease;    
     transition-delay: .5s;
     border-radius: 5px;
@@ -414,6 +420,20 @@ main:focus {
     flex-grow: 1;
 }
 
+.or-technologies {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.or-technologies > li {
+    display: inline-block;
+    padding: 2px 10px 2px 10px;
+    margin: 0 5px 5px 0;
+    position: relative;
+    border: 1px solid #52504e;
+    border-radius: 3px;
+}
 
 @media (min-width: 640px){
 
@@ -455,6 +475,10 @@ main:focus {
 
     .or-subsecton {
         margin-bottom: 45px;
+    }
+
+    .or-subsecton:before {
+        top: 36px;
     }
     
     .or-header-photo-wrap {
@@ -597,7 +621,8 @@ main:focus {
         fill: #444;
     }
 
-    .or-section-duration {
+    .or-section-duration,
+    .or-section-duration-dates {
         font-size: 12px;
         font-style: italic;
         margin-bottom: 10px;
@@ -606,6 +631,26 @@ main:focus {
         padding: 0;
         border-radius: 3px;
         color: #444;
+        background-color: transparent;
+        border: none;
+        position: relative;
+    }
+
+    .or-section-duration {
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+
+    .or-section-duration:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 11px;
+        border: 1px solid #878787;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .or-section-heading-small {
@@ -645,5 +690,9 @@ main:focus {
 
     .or-skill-bar {
         display: none;
+    }
+
+    .or-technologies>li {
+        font-size: 12px;
     }
 }

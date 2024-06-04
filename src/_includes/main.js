@@ -10,10 +10,8 @@
 
     document.addEventListener('DOMContentLoaded', function() {
 
-        orSkillsMarker = document.getElementById("orSkillsMarker");
-
-        orSkillBars = document.querySelectorAll("#orSkillList > li .or-skill-bar");    
-        
+        orSkillsMarker = document.querySelector(".or-skill-list");
+        orSkillBars = document.querySelectorAll("#orSkillList > li .or-skill-bar");            
 
         const observer = new IntersectionObserver(function (entries) {
     
@@ -24,7 +22,7 @@
         },
         {
             root: null,
-            rootMargin: "0px",
+            rootMargin: '180px 0px 180px 0px',
             threshold: 1.0,
         });
 

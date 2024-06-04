@@ -598,6 +598,10 @@ main:focus {
         border-top: 1px solid #e1e1e1;
     }
 
+    .or-list {
+        margin-bottom: 5px;
+    }
+
     .or-list > li {
        margin-bottom: 1px!important;
        font-size: 13px;
@@ -607,7 +611,7 @@ main:focus {
     .or-section-subheader {
         font-size: 16px;
         margin-bottom: 0;
-        color: #000;
+        color: #000;       
     }
 
     .or-section-subheader-extra {
@@ -634,6 +638,7 @@ main:focus {
         background-color: transparent;
         border: none;
         position: relative;
+        margin-bottom: 3px;
     }
 
     .or-section-duration {
@@ -658,6 +663,10 @@ main:focus {
         margin-bottom: 5px;
     }
 
+    .or-subsecton-wrap {
+        padding-top: 10px;
+    }   
+
     .or-subsecton {
         margin-bottom: 15px;
         padding-bottom: 10px;
@@ -677,10 +686,11 @@ main:focus {
 
     .or-skill {
         font-size: 13px;
-        margin-bottom: 3px;
         width: 50%;
         padding-right: 15px;
         border-bottom: none;
+        margin: 0;
+        padding: 2px 0;
     }
 
     .or-skill-years-dt,
@@ -692,7 +702,28 @@ main:focus {
         display: none;
     }
 
-    .or-technologies>li {
+    .or-technologies > li {
         font-size: 12px;
+        color: #000;
+        border: none;
+        padding: 0 7px;
+        margin: 0 7px 0 0;
+        position: relative;
+    }
+
+    .or-technologies > li:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 6px;
+        border: 1px solid #878787;
+        position: absolute;
+        right: -4px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .or-technologies > li:last-of-type:before {
+        display: none;
     }
 }

@@ -41,29 +41,32 @@ layout: layouts/base.html
 
 <main tabindex="-1" id="orMain">
 
-    <section class="or-section"> 
+    <section class="or-section or-section--skills"> 
         <div class="container">
-            <h2 class="or-section-header">Key skills and years of experience</h2>
-            <ul class="or-skill-list" id="orSkillList">
-                {% for skill in resume.contents.skills %}
-                <li class="or-skill">
-                    <div class="or-skill-name">{{ skill.name }}<span class="or-skill-years-mb">- {{ skill.years }} years</span></div>
-                    
-                    <div class="or-skill-bar-wrap">
-                        <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
-                    </div> 
-                    <div class="or-skill-years-wrap">
-                        <span class="or-skill-years-dt">{{ skill.years }} years</span>
-                    </div>            
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="or-section-content">            
+                <h2 class="or-section-header">Key skills and years of experience</h2>
+                <ul class="or-skill-list" id="orSkillList">
+                    {% for skill in resume.contents.skills %}
+                    <li class="or-skill">
+                        <div class="or-skill-name">{{ skill.name }}<span class="or-skill-years-mb"> ({{ skill.years }} years)</span></div>
+                        
+                        <div class="or-skill-bar-wrap">
+                            <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
+                        </div> 
+                        <div class="or-skill-years-wrap">
+                            <span class="or-skill-years-dt">{{ skill.years }} years</span>
+                        </div>            
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
         
     </section>
 
-    <section class="or-section">
+    <section class="or-section or-section--employment">
         <div class="container">
+            <div class="or-section-content">
             <h2 class="or-section-header">Employment history</h2>
 
             {% for item in resume.contents.workExperience %}
@@ -105,17 +108,8 @@ layout: layouts/base.html
                 </article>    
             {% endfor %}           
         </div>       
-
+    </div>
     </section>
 
             
 </main>
-
-<footer class="or-footer">
-    <div class="container">
-        <div class="or-footer-content">
-            <a class="or-back-to-top-link" href="#orTop">Back to top</a>
-            <div class="or-footer-copyright">© Oleg Rybin, 2024</div>
-        </div>        
-    </div>
-</footer>

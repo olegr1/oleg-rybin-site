@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
 
     --body-bg: #222120;
+    --accent-bg: #e9ddd1;
     --text-color-main: #fff6e6;
     --highlight-color-main: #79f7d7;
     --highlight-color-focus: var(--highlight-color-main);
@@ -42,6 +43,16 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
     font: inherit;
 }  
+
+a {
+    color: var(--highlight-color-main);
+    transition: color .3s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--text-color-main);
+}
 
 .or-skip-to-main-link {
     display: block;
@@ -121,7 +132,7 @@ main:focus {
 }
 
 .or-print-button {
-    background-color: var(--text-color-main);
+    background-color: var(--accent-bg);
     border: none;
     color: var(--body-bg);
     font-size: 12px;
@@ -209,6 +220,7 @@ main:focus {
     position: relative;
     margin-bottom: 30px;
     margin: 0 auto;
+    box-shadow: 10px 10px 31px 0 rgba(0, 0, 0, .75);
 }
 
 .or-header-photo {
@@ -229,8 +241,6 @@ main:focus {
 .or-contacts-phone{
     display: inline-block;   
     margin: 3px auto;
-    color: var(--highlight-color-main);
-    transition: color .3s ease;
 }
 
 .or-contacts-email:hover,
@@ -266,11 +276,18 @@ main:focus {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: fill .3s ease;
+}
+
+
+.or-contacts-linkedin:hover svg{
+    fill: var(--text-color-main);
 }
 
 .or-header-title-main {
     font-size: 30px;
     display: block;
+    margin-top: 15px;
 }
 
 .or-header-title {
@@ -308,6 +325,33 @@ main:focus {
     font-weight: normal;
     opacity: .7;
     white-space: nowrap;
+}
+
+.or-section.or-section--skills {
+    margin-bottom: 0;
+}
+
+.or-section--skills .or-section-header {
+    margin-bottom: 20px;
+}
+
+.or-section--skills .or-section-header,
+.or-section--employment .or-section-header {
+    border-top: none;
+}
+
+.or-section.or-section--skills .or-section-content{
+    border-radius: 10px;
+    padding: 0 15px 30px;
+    background-color: var(--accent-bg);
+    box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+}
+
+.or-section--skills .or-section-header,
+.or-section--skills .or-skill-name,
+.or-section--skills .or-skill-years-mb,
+.or-section--skills .or-skill-years-dt {
+    color: var(--body-bg);
 }
 
 .or-company-name {
@@ -410,7 +454,7 @@ main:focus {
 
 .or-skill-bar {
     height: 8px;
-    background-color: var(--highlight-color-main);
+    background-color: var(--body-bg);
     position: relative;
     display: block;
     margin-top: 5px;
@@ -436,10 +480,12 @@ main:focus {
 }
 
 .or-footer-content {
-    padding-top: 30px;
-    padding-bottom: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-top: 3px solid var(--border-color);
     display: flex;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .or-footer-copyright {
@@ -466,11 +512,64 @@ main:focus {
     border-radius: 3px;
 }
 
+.or-footer-github-content {
+    margin: 0 0 30px;
+    padding-left: 45px;
+    position: relative;
+}
+
+.or-footer-github-content svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--text-color-main);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+
+
 @media (min-width: 640px){
 
     .container {
         padding: 0 30px;
         width: 100%;
+    }    
+
+    
+
+    .or-skill {
+        margin-bottom: 0;        
+        display: flex;        
+        border-bottom: 1px solid #b1a396;
+    }
+
+    .or-skill:last-of-type {
+        border-bottom: none;
+    }
+    
+    .or-skill-name {
+        width: 50%;
+    }
+
+    .or-skill-bar-wrap,
+    .or-skill-years-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .or-skill-bar {
+        margin: 0;
+    }
+
+    .or-skill-years-mb {
+        display: none;
+    }
+    
+    .or-skill-years-dt {
+        display: block;
     }    
 }
 
@@ -490,8 +589,17 @@ main:focus {
         padding-top: 45px;
     }
 
+    
+    .or-section.or-section--skills .or-section-content{
+        padding: 0 30px 45px;
+    }
+
     .or-section-header {
         margin-bottom: 45px;
+    }
+
+    .or-section--employment .or-section-header {
+        padding-top: 60px;
     }
 
     .or-section-subheader {
@@ -533,39 +641,6 @@ main:focus {
     .or-section {
         margin-bottom: 45px;
     }
-
-    .or-skill {
-        margin-bottom: 0;        
-        display: flex;        
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .or-skill:last-of-type {
-        border-bottom: none;
-    }
-    
-    .or-skill-name {
-        width: 50%;
-    }
-
-    .or-skill-bar-wrap,
-    .or-skill-years-wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .or-skill-bar {
-        margin: 0;
-    }
-
-    .or-skill-years-mb {
-        display: none;
-    }
-    
-    .or-skill-years-dt {
-        display: block;
-    }    
 }
 
 @media print {
@@ -588,9 +663,20 @@ main:focus {
         margin-bottom: 15px;
     }
 
+    .or-section.or-section--skills .or-section-content {
+        background-color: transparent;
+        box-shadow: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
     .or-header {
         padding-top: 0;
         padding-bottom: 15px;
+    }
+
+    .or-section--employment .or-section-header {
+        padding-top: 30px;
     }
 
     .or-contacts {

@@ -7,12 +7,10 @@
         "Oleg's years of experience, coupled with his excellent communication skills, allow him to seamlessly integrate into any team and deliver standard-compliant web applications, regardless of the client's or employer's technology stack and development methodology."],
         "photo": "oleg_rybin.jpg",
         "skills": [
-            {"name": "HTML", "years": "20" },
-            {"name": "CSS", "years": "20" },
+            {"name": "HTML / CSS", "years": "20" },
             {"name": "Image editing", "years": "20" },             
             {"name": "JavaScript", "years": "15" }, 
-            {"name": "Content management systems", "years": "15" },
-            {"name": "Server-side templating", "years": "15" },
+            {"name": "Agile development", "years": "15" }, 
             {"name": "Web accessibility", "years": "5" },
             {"name": "Web performance", "years": "5" }
         ],

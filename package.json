@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "clean-css": "^5.3.3",
+    "docx": "^8.5.0",
     "html-minifier": "^4.0.0",
     "terser": "^5.31.0"
   }

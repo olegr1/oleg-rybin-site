@@ -34,6 +34,10 @@ module.exports = function(eleventyConfig) {
     return numberOfYearsFinal;
   });
 
+  eleventyConfig.addFilter('stringify', (data) => {
+    return JSON.stringify(data, null, "\t")
+  })
+
   eleventyConfig.addFilter("commaSeparatedToListItems", function(commaSeparatedString) { 
 
     const itemsArray = commaSeparatedString.split(",");
@@ -69,6 +73,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/scripts");
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "/" });
 
   return {

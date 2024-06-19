@@ -2,6 +2,140 @@
 layout: layouts/base.html
 ---
 
+<button type="button" onclick="generate()">Generate resume</button>
+<script src="/assets/scripts/index.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+
+<script>
+    var resumeObject = {{ resume.contents | stringify | safe }}
+</script>
+
+  
+<script>
+
+    const renderIntro = () => {
+
+        const name = new docx.Paragraph({
+                        heading: docx.HeadingLevel.TITLE_1,                     
+                        text: resumeObject.name,                            
+                        style: "resumeTitle",
+                    })
+
+        const role = new docx.Paragraph({
+                        heading: docx.HeadingLevel.TITLE_2,          
+                        text: resumeObject.role,
+                        style: "resumeSubitle"
+                    })
+
+        const childrenArray = [];
+
+        childrenArray.push(name);
+        childrenArray.push(role);
+
+        
+        resumeObject.intro.forEach(element => {            
+            const introParagraph = new docx.Paragraph({         
+                text: element,
+            })
+
+            childrenArray.push(introParagraph);
+        });
+        
+        return childrenArray;
+    }
+
+
+    const renderSectonTitle = (titleText) => {
+
+        const title = new docx.Paragraph({
+                        heading: docx.HeadingLevel.HEADING_1,        
+                        text: titleText
+                    })
+
+        return title;
+    }
+
+
+    function generate() {
+        const doc = new docx.Document({
+            creator: resumeObject.name,            
+            title: `${resumeObject.name} | ${resumeObject.role}`,
+            styles: {
+            default: {
+
+                heading1: {
+                    run: {
+                        font: "Arial",
+                        size: 30,
+                        bold: true,
+                        color: "000000"
+                    },
+                    paragraph: {
+                        spacing: { line: 276, before: 20 * 72 * 0.1, after: 20 * 72 * 0.05 },
+                    },
+                },
+            },
+
+            paragraphStyles: [
+                {
+                    id: "resumeTitle",
+                    name: "Resume Title",
+                    run: {
+                        font: "Arial",
+                        size: 40,
+                        bold: true,
+                        color: "000000"
+                    },
+                    paragraph: {
+                        spacing: { line: 300 },
+                        alignment: docx.AlignmentType.CENTER,
+                    },
+                },
+                {
+                    id: "resumeSubitle",
+                    name: "Resume Subtitle",
+                    run: {
+                        font: "Arial",
+                        size: 20,
+                        bold: true,
+                        color: "4d4d4d"
+                    },
+                    paragraph: {
+                        alignment: docx.AlignmentType.CENTER,
+                        spacing: { line: 400 },
+                    },
+                },
+            ],
+            },
+            sections: [            
+            {
+                properties: {
+                    page: {
+                        margin: {
+                            top: 700,
+                            right: 700,
+                            bottom: 700,
+                            left: 700,
+                        },
+                    },
+                },
+
+                children: [
+                    ...renderIntro(),
+                    renderSectonTitle("Employment history")
+                ] 
+            },                
+            ],
+        });
+
+        docx.Packer.toBlob(doc).then((blob) => {
+            console.log(blob);
+            saveAs(blob, "example.docx");
+            console.log("Document created successfully");
+        });
+    }
+</script>
+
 <header class="or-header" id="orTop">
     <div class="container">
         <div class="or-header-content">

@@ -15,27 +15,58 @@ layout: layouts/base.html
 
     const renderIntro = () => {
 
-        const name = new docx.Paragraph({
-                        heading: docx.HeadingLevel.TITLE_1,                     
-                        text: resumeObject.name,                            
-                        style: "resumeTitle",
-                    })
-
-        const role = new docx.Paragraph({
-                        heading: docx.HeadingLevel.TITLE_2,          
-                        text: resumeObject.role,
-                        style: "resumeSubitle"
-                    })
-
         const childrenArray = [];
 
-        childrenArray.push(name);
-        childrenArray.push(role);
+        const nameRole = new docx.Paragraph({
+            heading: docx.HeadingLevel.HEADING_1,  
+            children: [
+                new docx.TextRun({
+                    text: resumeObject.name,
+                    font: "Arial",
+                    size: 30,           
+                }),
+                new docx.TextRun({
+                    text: resumeObject.role,
+                    font: "Arial",
+                    size: 24,                        
+                    break: 1,
+                }),
+            ]                
+        })
 
+        const contacts = new docx.Paragraph({
+            children: [
+                new docx.TextRun({
+                    text: resumeObject.phone,
+                    font: "Arial",
+                    size: 20,           
+                }),
+                new docx.TextRun({
+                    text: " \u2022 ",
+                    font: "Arial",
+                    size: 20,    
+                }),
+                new docx.TextRun({
+                    text: resumeObject.email,
+                    font: "Arial",
+                    size: 20,    
+                }),
+            ]                
+        })        
+
+        childrenArray.push(nameRole);        
+        childrenArray.push(contacts);
         
         resumeObject.intro.forEach(element => {            
-            const introParagraph = new docx.Paragraph({         
-                text: element,
+            const introParagraph = new docx.Paragraph({  
+                children: [
+                    new docx.TextRun({
+                        text: element,
+                        font: "Arial",
+                        size: 20,                        
+                        break: 1,
+                    }),
+                ]       
             })
 
             childrenArray.push(introParagraph);
@@ -44,69 +75,216 @@ layout: layouts/base.html
         return childrenArray;
     }
 
-
     const renderSectonTitle = (titleText) => {
 
         const title = new docx.Paragraph({
-                        heading: docx.HeadingLevel.HEADING_1,        
-                        text: titleText
-                    })
+            heading: docx.HeadingLevel.HEADING_1,        
+            text: titleText
+        })
 
         return title;
     }
+
+    const renderExpSectonTitle = (titleText) => {
+
+        const title = new docx.Paragraph({
+            heading: docx.HeadingLevel.HEADING_3,        
+            text: titleText
+        })
+
+        return title;
+    }
+
+    const renderSkillsAndExperience = () => {
+
+        const childrenArray = []       
+        
+        const skillsTable = new docx.Table({
+            width: {
+                size: 100,
+                type: docx.WidthType.PERCENTAGE,
+            },
+            rows: [
+                new docx.TableRow({
+                    children: [
+                        new docx.TableCell({
+                            children: resumeObject.skills.map((skill, index) => { 
+
+                                if(index < resumeObject.skills.length / 2){
+                                    return renderExpBullet(`${skill.name} - ${skill.years} years`)
+                                }                                
+                            }),
+                            width: {
+                                size: 50,
+                                type: docx.WidthType.PERCENTAGE,
+                            }                           
+                        }),
+                        new docx.TableCell({
+                            children: resumeObject.skills.map((skill, index) => { 
+                                
+                                if(index >= resumeObject.skills.length / 2){
+                                    return renderExpBullet(`${skill.name} - ${skill.years} years`) 
+                                }                                
+                            }),
+                            width: {
+                                size: 50,
+                                type: docx.WidthType.PERCENTAGE,
+                            }  
+                        }),
+                    ],
+                }),
+            ]
+        })       
+
+        childrenArray.push(renderSectonTitle("Key skills and years of experience"))
+        childrenArray.push(skillsTable)
+
+        return childrenArray;
+    }
+
+    const renderEmploymentHistory = () => {
+
+        let childrenArray = [];
+
+        resumeObject.workExperience.forEach(element => {       
+
+            const expParagraphTitle = new docx.Paragraph({   
+                heading: docx.HeadingLevel.HEADING_2,
+                children: [
+                    new docx.TextRun({
+                        text: `${formatMonthYear(element.duration.startDate)} - ${formatMonthYear(element.duration.endDate)}`,
+                        bold: true,
+                        font: "Arial",
+                        size: 10,
+                    }),
+                    new docx.TextRun({
+                        text: element.role,
+                        bold: true,
+                        font: "Arial",
+                        size: 20,
+                        italics: true,
+                        break: 1,
+                    }),
+                    new docx.TextRun({
+                        text: " at ",                            
+                        font: "Arial",
+                        size: 10,
+                    }),
+                    new docx.TextRun({
+                        text: element.companyName,
+                        bold: true,
+                        font: "Arial",
+                        size: 20,
+                        italics: true
+                    }),
+                    new docx.TextRun({
+                        text: ` - ${element.location.city}, ${element.location.country}`,
+                        bold: true,
+                        font: "Arial",
+                        size: 16,
+                        italics: true
+                    }),
+                ]
+            })      
+            
+            childrenArray.push(renderSectonTitle("Employment history"))
+
+            childrenArray.push(expParagraphTitle);
+
+            childrenArray.push(renderExpSectonTitle("Responsibilities"))
+
+            element.responsibilities.forEach( element => {
+                childrenArray.push(renderExpBullet(element));
+            })
+
+            childrenArray.push(renderExpSectonTitle("Highlights"))
+
+            element.highlights.forEach( element => {
+                childrenArray.push(renderExpBullet(element));
+            })
+
+            childrenArray.push(renderExpSectonTitle("Technologies"))
+
+            childrenArray.push(
+                new docx.Paragraph({  
+                    children: [
+                        new docx.TextRun({
+                            text: element.technologies,
+                            font: "Arial",
+                            size: 20,                        
+                            break: 1,
+                        }),
+                    ]       
+                })
+            );
+
+        });        
+
+        return childrenArray;
+    }
+    
+
+    const renderExpBullet = (text) =>{   
+
+        const bullet = new docx.Paragraph({
+            //text: text,
+            children: [
+                new docx.TextRun({
+                    text: text,
+                    font: "Arial",
+                    size: 18,
+                })
+            ],
+            numbering: {
+                reference: "my-bullet-points",
+                level: 0,
+            }
+        });
+
+        return bullet;
+    }
+
+    const formatMonthYear = (partialDate) => { 
+
+        var [year, month] = partialDate.split('-');
+
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        const date = new Date(year, parseInt(month) - 1);
+        const formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+
+        return formattedDate;
+    };
 
 
     function generate() {
         const doc = new docx.Document({
             creator: resumeObject.name,            
             title: `${resumeObject.name} | ${resumeObject.role}`,
-            styles: {
-            default: {
 
-                heading1: {
-                    run: {
-                        font: "Arial",
-                        size: 30,
-                        bold: true,
-                        color: "000000"
+            numbering: {
+                config: [
+                    {
+                        reference: "my-bullet-points",
+                        levels: [
+                            {
+                                level: 0,
+                                format: docx.LevelFormat.BULLET,
+                                text: "\u2022",
+                                alignment: docx.AlignmentType.LEFT,
+                                style: {
+                                    paragraph: {
+                                        indent: { left: docx.convertInchesToTwip(0.5), hanging: docx.convertInchesToTwip(0.25) },
+                                    },
+                                },
+                            },
+                        ],
                     },
-                    paragraph: {
-                        spacing: { line: 276, before: 20 * 72 * 0.1, after: 20 * 72 * 0.05 },
-                    },
-                },
-            },
-
-            paragraphStyles: [
-                {
-                    id: "resumeTitle",
-                    name: "Resume Title",
-                    run: {
-                        font: "Arial",
-                        size: 40,
-                        bold: true,
-                        color: "000000"
-                    },
-                    paragraph: {
-                        spacing: { line: 300 },
-                        alignment: docx.AlignmentType.CENTER,
-                    },
-                },
-                {
-                    id: "resumeSubitle",
-                    name: "Resume Subtitle",
-                    run: {
-                        font: "Arial",
-                        size: 20,
-                        bold: true,
-                        color: "4d4d4d"
-                    },
-                    paragraph: {
-                        alignment: docx.AlignmentType.CENTER,
-                        spacing: { line: 400 },
-                    },
-                },
-            ],
-            },
+                ],
+            },         
             sections: [            
             {
                 properties: {
@@ -121,8 +299,9 @@ layout: layouts/base.html
                 },
 
                 children: [
-                    ...renderIntro(),
-                    renderSectonTitle("Employment history")
+                    ...renderIntro(),                    
+                    ...renderSkillsAndExperience(),
+                    ...renderEmploymentHistory()
                 ] 
             },                
             ],
@@ -133,6 +312,8 @@ layout: layouts/base.html
             saveAs(blob, "example.docx");
             console.log("Document created successfully");
         });
+
+        
     }
 </script>
 

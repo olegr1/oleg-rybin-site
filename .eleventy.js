@@ -72,6 +72,7 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
+  eleventyConfig.addPassthroughCopy("src/assets/docs");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/scripts");
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "/" });

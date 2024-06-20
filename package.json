@@ -6,13 +6,17 @@
   "scripts": {
     "build": "npx eleventy",
     "start": "npx eleventy --serve",
+    "resumedev": "nodemon resume_generator/index.js",
+    "resume": "node resume_generator/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Oleg Rybin",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy": "^1.0.0",
+    "@types/node": "^20.14.6",
+    "nodemon": "^3.1.4"
   },
   "dependencies": {
     "clean-css": "^5.3.3",

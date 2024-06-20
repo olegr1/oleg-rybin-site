@@ -148,6 +148,7 @@ main:focus {
 
 .or-print-button:hover {
     text-decoration: underline;
+    color: var(--body-bg);
 }
 
 .or-print-button svg{

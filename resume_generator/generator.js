@@ -48,36 +48,31 @@ function generateResume() {
                     color: "444444", 
                     bold: true
                 }),
+
                 new TextRun({
-                    children: [
-                        new TextRun({
-                            text: "    |    ",
-                            font: "Arial",
-                            size: 20,   
-                            color: "D4D4D4" 
-                        }),
-                        new TextRun({
-                            text: resumeData.phone,
-                            font: "Arial",
-                            size: 22,         
-                            italics: true  
-                        }),
-                        new TextRun({
-                            text: " \u2022 ",
-                            font: "Arial",
-                            size: 22,    
-                        }),
-                        new TextRun({
-                            text: resumeData.email,
-                            font: "Arial",
-                            size: 22,         
-                            italics: true  
-                        }),
-                    ],
+                    text: "    |    ",
                     font: "Arial",
-                    size: 22,
-                }),             
-            ],                       
+                    size: 20,   
+                    color: "D4D4D4" 
+                }),
+                new TextRun({
+                    text: resumeData.phone,
+                    font: "Arial",
+                    size: 22,         
+                    italics: true  
+                }),
+                new TextRun({
+                    text: " \u2022 ",
+                    font: "Arial",
+                    size: 22,    
+                }),
+                new TextRun({
+                    text: resumeData.email,
+                    font: "Arial",
+                    size: 22,         
+                    italics: true  
+                }),
+    ]                 
         })       
 
         const line = new Paragraph({          
@@ -150,45 +145,42 @@ function generateResume() {
         const skillsCol3 = resumeData.skills.slice(2 * partSize)
         
         const skillsTable = new Table({
+            columnWidths: [3500, 3500, 3500],
             borders: TableBorders.NONE,
-            width: {
-                size: 100,
-                type: WidthType.PERCENTAGE,
-            },
             rows: [
                 new TableRow({
                     children: [
                         new TableCell({
+                            width: {
+                                size: 3500,
+                                type: WidthType.DXA,
+                            },
                             children: skillsCol1.map((skill, index) => { 
                                 return renderExpBullet(`${skill.name} - ${skill.years} years`, "bullet-points")                      
                             }),
-                            width: {
-                                size: 33,
-                                type: WidthType.PERCENTAGE,
-                            },                        
                         }),
                         new TableCell({
+                            width: {
+                                size: 3500,
+                                type: WidthType.DXA,
+                            },
                             children: skillsCol2.map((skill, index) => { 
                                 return renderExpBullet(`${skill.name} - ${skill.years} years`, "bullet-points")                      
                             }),
-                            width: {
-                                size: 33,
-                                type: WidthType.PERCENTAGE,
-                            },
                         }),
                         new TableCell({
+                            width: {
+                                size: 3500,
+                                type: WidthType.DXA,
+                            },
                             children: skillsCol3.map((skill, index) => { 
                                 return renderExpBullet(`${skill.name} - ${skill.years} years`, "bullet-points")                      
                             }),
-                            width: {
-                                size: 33,
-                                type: WidthType.PERCENTAGE,
-                            },
                         }),
                     ],
                 }),
-            ]
-        })       
+            ],
+        });
 
         childrenArray.push(renderSectonTitle("Key skills and years of experience"))
         childrenArray.push(skillsTable)

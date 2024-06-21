@@ -10,8 +10,8 @@ The markup is generated using [Nunjucks](https://mozilla.github.io/nunjucks/) te
 * Time between dates calculation filter _(Outputs "10 years" based on "2014-06" and "2024-06")_
 * CSS and JS file minification and inlining
 * HTML minification
-* Dynamic generation of **.docx* format resume from JSON using [DOCX](https://docx.js.org/) library
+* Dynamically generated **.docx* version of the resume using [DOCX](https://docx.js.org/) library
 
 The site can be found at [https://olegrybin.com](https://olegrybin.com)
 
-It is hosted by **Cloudflare** and automatically built and deployed using a Cloudflare *worker* upon committing to the **main** branch of this repo.
+It is hosted on **Cloudflare** and is automatically built and deployed using a Cloudflare *worker* upon committing to the **main** branch of this repo.

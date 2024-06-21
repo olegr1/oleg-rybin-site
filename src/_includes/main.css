@@ -259,7 +259,7 @@ main:focus {
     display: none;
 }
 
-.or-contacts-linkedin {
+.or-contacts-icon-link {
     display: inline-block;
     border-radius: 3px;
     position: relative;
@@ -269,7 +269,7 @@ main:focus {
     margin-right: 15px;
 }
 
-.or-contacts-linkedin svg {
+.or-contacts-icon-link svg {
     width: 20px;
     height: 20px;
     fill: var(--highlight-color-main);
@@ -280,8 +280,7 @@ main:focus {
     transition: fill .3s ease;
 }
 
-
-.or-contacts-linkedin:hover svg{
+.or-contacts-icon-link:hover svg{
     fill: var(--text-color-main);
 }
 
@@ -356,7 +355,7 @@ main:focus {
 }
 
 .or-company-name {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin-right: 10px;
 }
 
@@ -486,7 +485,6 @@ main:focus {
     margin-bottom: 20px;
     border-top: 3px solid var(--border-color);
     display: flex;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .or-footer-copyright {
@@ -509,27 +507,9 @@ main:focus {
     padding: 2px 10px 2px 10px;
     margin: 0 5px 5px 0;
     position: relative;
-    border: 1px solid #52504e;
+    border: 1px solid #474543;
     border-radius: 3px;
 }
-
-.or-footer-github-content {
-    margin: 0 0 30px;
-    padding-left: 45px;
-    position: relative;
-}
-
-.or-footer-github-content svg {
-    width: 30px;
-    height: 30px;
-    fill: var(--text-color-main);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-}
-
-
 
 @media (min-width: 640px){
 
@@ -682,6 +662,10 @@ main:focus {
 
     .or-contacts {
         margin-top: 5px;
+    }
+
+    .or-contacts-icon-link {
+        display: none;
     }
 
     .or-intro p {

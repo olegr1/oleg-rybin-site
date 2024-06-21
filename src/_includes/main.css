@@ -3,7 +3,7 @@ html {
     scroll-behavior: smooth;
 
     --body-bg: #222120;
-    --accent-bg: #e9ddd1;
+    --accent-bg: #ebdcce;
     --text-color-main: #fff6e6;
     --highlight-color-main: #79f7d7;
     --highlight-color-focus: var(--highlight-color-main);

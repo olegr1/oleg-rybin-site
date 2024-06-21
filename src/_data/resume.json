@@ -22,7 +22,7 @@
                 "role": "Lead UI developer (consultant)",
                 "duration": {
                     "startDate": "2014-06",
-                    "endDate": "2024-06"
+                    "endDate": ""
                 },                
                 "location": {
                     "country": "Canada",
@@ -127,11 +127,11 @@
                     "city": "Netanya"
                 },
                 "responsibilities": [
-                    "Identifying and addressing content-related discrepancies in product databases, including duplicated, incomplete, or incorrect information",
+                    "Identifying and addressing content-related issues in product databases",
                     "Conducting systematic competitor research and delivering insightful reports to the Content Management Team"                 
                 ],
                 "highlights": [],               
-                "technologies": "MS SQL, web browsers"
+                "technologies": "MS SQL"
             },
             {
                 "companyName": "CGFX / ATOM Macrcom",
@@ -146,9 +146,7 @@
                     "city": "Rehovot"
                 },
                 "responsibilities": [
-                    "Designing sample websites and templates for the company's custom PHP-based CMS",
-                    "Creating 3D models using 3DS Max",
-                    "Providing support to users"
+                    "Designing templates for the company's custom PHP-based CMS"
                 ],
                 "highlights": [],               
                 "technologies": "HTML, CSS, Photoshop, 3DS MAX"
@@ -166,7 +164,7 @@
                     "city": "Gzira"
                 },
                 "responsibilities": [
-                    "Designing various prints promotional materials"
+                    "Designing various promotional materials"
                 ],
                 "highlights": [],               
                 "technologies": "HTML, CSS, Photoshop, Quark Xpress, Macromedia Freehand, Flash"
@@ -184,13 +182,9 @@
                     "city": "Sliema"
                 },
                 "responsibilities": [
-                    "Managing ASP's corporate website and intranet portal",
-                    "Creating customer's online resources and keeping them up-to-date"
+                    "Managing ASP's corporate website and intranet portal"
                 ],
-                "highlights": [
-                    "Conceptualized and designed the company's corporate web site",
-                    "Designed the interface of the company's intranet portal"
-                ],               
+                "highlights": [],               
                 "technologies": "HTML, CSS, Adobe Photoshop, Macromedia Flash"
             }
         ]

@@ -1,3 +1,3 @@
-const generateResume = require('./generator.js');
+const generateResume = require('./generator.js')
 
-generateResume();
+generateResume()

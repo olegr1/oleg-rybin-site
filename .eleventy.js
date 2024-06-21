@@ -6,15 +6,23 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("formatMonthYear", function(partialDate) { 
 
-      var [year, month] = partialDate.split('-');
+      let formattedDate = "";
 
-      const monthNames = [
-          'January', 'February', 'March', 'April', 'May', 'June',
-          'July', 'August', 'September', 'October', 'November', 'December'
-      ];
+      if(partialDate === ""){
 
-      const date = new Date(year, parseInt(month) - 1);
-      const formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+        formattedDate = "Current";        
+      }else{
+
+        const [year, month] = partialDate.split('-');
+
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+  
+        const date = new Date(year, parseInt(month) - 1);
+        formattedDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+      }
 
       return formattedDate;
   });
@@ -22,7 +30,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("getNumberOfYearsBetween", function(dateOne, dateTwo) { 
 
     const date1 = new Date(dateOne);
-    const date2 = new Date(dateTwo);
+    let date2;
+
+    if(dateTwo !== ""){
+
+      date2 = new Date(dateTwo);
+
+    } else {
+
+      const currentDate = new Date();
+      const year = currentDate.getFullYear();
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+
+      date2 = new Date(`${year}-${month}`);
+    }       
 
     const differenceMs = date2 - date1;
     const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;

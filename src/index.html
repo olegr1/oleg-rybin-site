@@ -3,117 +3,174 @@ layout: layouts/base.html
 ---
 
 <header class="or-header" id="orTop">
-    <div class="container">
-        <div class="or-header-content">
+  <div class="container">
+    <div class="or-header-content">
+      <a
+        href="/assets/docs/oleg_rybin_front_end_dev_resume.docx"
+        class="or-print-button"
+      >
+        <svg tabindex="-1" focusable="false" aria-hidden="true">
+          <use tabindex="-1" focusable="false" xlink:href="#icon-print"></use>
+        </svg>
+        Print version
+      </a>
 
-            <a href="/assets/docs/oleg_rybin_front_end_dev_resume.docx" class="or-print-button">
-                <svg tabindex="-1" focusable="false" aria-hidden="true">
-                    <use tabindex="-1" focusable="false" xlink:href="#icon-print"></use>
-                </svg>
-                Print version
-            </a>
+      <div class="or-header-photo-wrap">
+        <img
+          class="or-header-photo"
+          src="/assets/images/{{resume.contents.photo}}"
+          width="92"
+          height="92"
+          alt="photo of Oleg Rybin"
+        />
+      </div>
+      <h1 class="or-header-title">
+        <span class="or-header-title-main">{{resume.contents.name}}</span>
+        <span class="or-header-title-subtitle">{{resume.contents.role}}</span>
+      </h1>
 
-            <div class="or-header-photo-wrap">
-                <img class="or-header-photo" src="/assets/images/{{resume.contents.photo}}" width="92" height="92" alt="photo of Oleg Rybin">
-            </div>        
-            <h1 class="or-header-title">
-                <span class="or-header-title-main">{{resume.contents.name}}</span>
-                <span class="or-header-title-subtitle">{{resume.contents.role}}</span>            
-            </h1>    
-            
-            <p class="or-contacts">                
-                <a href="https://github.com/olegr1/oleg-rybin-site" title="This site's GitHub repo" class="or-contacts-icon-link">
-                    <span class="sr-only">Check out the source code of this site on Oleg's GitHub profile</span>
-                    <svg focusable="false" tabindex="-1" aria-hidden="true"><use focusable="false" tabindex="-1" xlink:href="#icon-github"></use></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/oleg-rybin-70a56322/" title="Oleg Rybin's LinkedIn page" class="or-contacts-icon-link">
-                    <span class="sr-only">Go to Oleg Rybin's Linked In page</span>
-                    <svg focusable="false" tabindex="-1" aria-hidden="true" ><use focusable="false" tabindex="-1" xlink:href="#icon-linkedin"></use></svg>
-                </a>
-                <a class="or-contacts-email or-nobr" href="mailto:&#x6F;&#x6C;&#x65;&#x67;&#x40;&#x6F;&#x6C;&#x65;&#x67;&#x72;&#x79;&#x62;&#x69;&#x6E;&#x2E;&#x63;&#x6F;&#x6D;">oleg@olegrybin<span>.olegrybin</span>.com</a>
-                <span  class="or-contacts-delimeter" aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>                
-                <a href="tel:+16474011468" class="or-contacts-phone or-nobr">+1 (647) 401<span>401</span>-1468</a>
-            </p>
-            <div class="or-intro">
-                {% for paragraph in resume.contents.intro %}
-                <p>{{paragraph}}</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>    
+      <p class="or-contacts">
+        <a
+          href="https://github.com/olegr1"
+          title="This site's GitHub repo"
+          class="or-contacts-icon-link"
+        >
+          <span class="sr-only"
+            >Check out the source code of this site on Oleg's GitHub
+            profile</span
+          >
+          <svg focusable="false" tabindex="-1" aria-hidden="true">
+            <use
+              focusable="false"
+              tabindex="-1"
+              xlink:href="#icon-github"
+            ></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/oleg-rybin-70a56322/"
+          title="Oleg Rybin's LinkedIn page"
+          class="or-contacts-icon-link"
+        >
+          <span class="sr-only">Go to Oleg Rybin's Linked In page</span>
+          <svg focusable="false" tabindex="-1" aria-hidden="true">
+            <use
+              focusable="false"
+              tabindex="-1"
+              xlink:href="#icon-linkedin"
+            ></use>
+          </svg>
+        </a>
+        <a
+          class="or-contacts-email or-nobr"
+          href="mailto:&#x6F;&#x6C;&#x65;&#x67;&#x40;&#x6F;&#x6C;&#x65;&#x67;&#x72;&#x79;&#x62;&#x69;&#x6E;&#x2E;&#x63;&#x6F;&#x6D;"
+          >oleg@olegrybin<span>.olegrybin</span>.com</a
+        >
+        <span class="or-contacts-delimeter" aria-hidden="true"
+          >&nbsp;&nbsp;|&nbsp;&nbsp;</span
+        >
+        <a href="tel:+16474011468" class="or-contacts-phone or-nobr"
+          >+1 (647) 401<span>401</span>-1468</a
+        >
+      </p>
+      <div class="or-intro">
+        {% for paragraph in resume.contents.intro %}
+        <p>{{paragraph}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </header>
 
 <main tabindex="-1" id="orMain">
-
-    <section class="or-section or-section--skills"> 
-        <div class="container">
-            <div class="or-section-content">            
-                <h2 class="or-section-header">Key skills and years of experience</h2>
-                <ul class="or-skill-list" id="orSkillList">
-                    {% for skill in resume.contents.skills %}
-                    <li class="or-skill">
-                        <div class="or-skill-name">{{ skill.name }}<span class="or-skill-years-mb"> ({{ skill.years }} years)</span></div>
-                        
-                        <div class="or-skill-bar-wrap">
-                            <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
-                        </div> 
-                        <div class="or-skill-years-wrap">
-                            <span class="or-skill-years-dt">{{ skill.years }} years</span>
-                        </div>            
-                    </li>
-                    {% endfor %}
-                </ul>
+  <section class="or-section or-section--skills">
+    <div class="container">
+      <div class="or-section-content">
+        <h2 class="or-section-header">Key skills and years of experience</h2>
+        <ul class="or-skill-list" id="orSkillList">
+          {% for skill in resume.contents.skills %}
+          <li class="or-skill">
+            <div class="or-skill-name">
+              {{ skill.name }}<span class="or-skill-years-mb">
+                ({{ skill.years }} years)</span
+              >
             </div>
-        </div>
-        
-    </section>
 
-    <section class="or-section or-section--employment">
-        <div class="container">
-            <div class="or-section-content">
-            <h2 class="or-section-header">Employment history</h2>
-
-            {% for item in resume.contents.workExperience %}
-    
-            <article class="or-subsecton">
-
-                <span class="or-section-duration">{{item.duration.startDate | getNumberOfYearsBetween(item.duration.endDate)}}</span><span class="or-section-duration-dates">{{ item.duration.startDate | formatMonthYear}} - {{ item.duration.endDate | formatMonthYear }}</span>
-
-                <h3 class="or-section-subheader">{{ item.role }} <span class="or-section-subheader-small-text">at</span> <span class="or-company-name">{{ item.companyName }}</span> <span class="or-section-subheader-extra"> <svg tabindex="-1" class="or-location-icon" focusable="false" aria-hidden="true">
-                    <use tabindex="-1" focusable="false" xlink:href="#icon-location"></use>
-                </svg> {{ item.location.city }}, {{ item.location.country }}</span></h3>    
-    
-                <div class="or-subsecton-wrap">
-                    <h4 class="or-section-heading-small">Responsibilities</h4>
-                    <ul class="or-list">
-                        {% for responsibility in item.responsibilities %}
-                        <li>
-                            {{responsibility}}
-                        </li>
-                        {% endfor %}
-                    </ul>    
-        
-                    {% if item.highlights | length %}
-                        <h4 class="or-section-heading-small">Highlights</h4>
-                        <ul class="or-list">
-                            {% for highlight in item.highlights %}
-                            <li>
-                                {{highlight}}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-
-                    <h4 class="or-section-heading-small">Technologies</h4>
-                    <ul class="or-technologies">
-                        {{item.technologies | commaSeparatedToListItems | safe }}
-                    </ul>
-                </div>          
-                </article>    
-            {% endfor %}           
-        </div>       
+            <div class="or-skill-bar-wrap">
+              <div class="or-skill-bar" data-years="{{ skill.years }}"></div>
+            </div>
+            <div class="or-skill-years-wrap">
+              <span class="or-skill-years-dt">{{ skill.years }} years</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-    </section>
+  </section>
 
-            
+  <section class="or-section or-section--employment">
+    <div class="container">
+      <div class="or-section-content">
+        <h2 class="or-section-header">Employment history</h2>
+
+        {% for item in resume.contents.workExperience %}
+
+        <article class="or-subsecton">
+          <span class="or-section-duration"
+            >{{item.duration.startDate |
+            getNumberOfYearsBetween(item.duration.endDate)}}</span
+          ><span class="or-section-duration-dates"
+            >{{ item.duration.startDate | formatMonthYear}} - {{
+            item.duration.endDate | formatMonthYear }}</span
+          >
+
+          <h3 class="or-section-subheader">
+            {{ item.role }}
+            <span class="or-section-subheader-small-text">at</span>
+            <span class="or-company-name">{{ item.companyName }}</span>
+            <span class="or-section-subheader-extra">
+              <svg
+                tabindex="-1"
+                class="or-location-icon"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <use
+                  tabindex="-1"
+                  focusable="false"
+                  xlink:href="#icon-location"
+                ></use>
+              </svg>
+              {{ item.location.city }}, {{ item.location.country }}</span
+            >
+          </h3>
+
+          <div class="or-subsecton-wrap">
+            <h4 class="or-section-heading-small">Responsibilities</h4>
+            <ul class="or-list">
+              {% for responsibility in item.responsibilities %}
+              <li>{{responsibility}}</li>
+              {% endfor %}
+            </ul>
+
+            {% if item.highlights | length %}
+            <h4 class="or-section-heading-small">Highlights</h4>
+            <ul class="or-list">
+              {% for highlight in item.highlights %}
+              <li>{{highlight}}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            <h4 class="or-section-heading-small">Technologies</h4>
+            <ul class="or-technologies">
+              {{item.technologies | commaSeparatedToListItems | safe }}
+            </ul>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 </main>

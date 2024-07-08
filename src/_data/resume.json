@@ -1,192 +1,195 @@
 {
-    "contents": {
-        "name": "Oleg Rybin",
-        "role": "Front End Web Developer",
-        "phone": "+1 (647) 401-1468",
-        "email": "oleg@olegrybin.com",
-        "intro": ["Oleg is a senior front-end web developer with nearly 20 years of professional experience in industries such as telecommunications, retail, on-demand printing, marketing and e-commerce.",
-        "His skills range from the hands-on creation of complex interactive UI components using JavaScript, CSS, and HTML to architecting custom UI frameworks.",
-        "Oleg's years of experience, coupled with his excellent communication skills, allow him to seamlessly integrate into any team and deliver standard-compliant web applications, regardless of the client's or employer's technology stack and development methodology."],
-        "photo": "oleg_rybin.jpg",
-        "skills": [
-            {"name": "HTML / CSS", "years": "20" },
-            {"name": "Image editing", "years": "20" },             
-            {"name": "JavaScript", "years": "15" }, 
-            {"name": "Agile development", "years": "10" }, 
-            {"name": "Web accessibility", "years": "5" },
-            {"name": "Web performance", "years": "5" }
+  "contents": {
+    "name": "Oleg Rybin",
+    "role": "Front End Web Developer",
+    "phone": "+1 (647) 401-1468",
+    "email": "oleg@olegrybin.com",
+    "site": "olegrybin.com",
+    "github": "github.com/olegr1",
+    "linkedin": "linkedin.com/in/oleg-rybin-70a56322/",
+    "intro": [
+      "Oleg is a senior front-end web developer with nearly 20 years of professional experience in industries such as telecommunications, retail, on-demand printing, marketing and e-commerce.",
+      "His skills range from the hands-on creation of complex interactive UI components using JavaScript, CSS, and HTML to architecting custom UI frameworks.",
+      "Oleg's years of experience, coupled with his excellent communication skills, allow him to seamlessly integrate into any team and deliver standard-compliant web applications, regardless of the client's or employer's technology stack and development methodology."
+    ],
+    "photo": "oleg_rybin.jpg",
+    "skills": [
+      { "name": "HTML / CSS", "years": "20" },
+      { "name": "Image editing", "years": "20" },
+      { "name": "JavaScript", "years": "15" },
+      { "name": "Agile development", "years": "10" },
+      { "name": "Web accessibility", "years": "5" },
+      { "name": "Web performance", "years": "5" }
+    ],
+    "workExperience": [
+      {
+        "companyName": "Bell",
+        "role": "Lead UI developer (consultant)",
+        "duration": {
+          "startDate": "2014-06",
+          "endDate": "2024-07"
+        },
+        "location": {
+          "country": "Canada",
+          "province": "ON",
+          "city": "Mississauga"
+        },
+        "responsibilities": [
+          "Developing new sections, components, applications and features for various Bell websites",
+          "Implementing performance enhancements to improve key metrics",
+          "Offering technical guidance in UI development, ensuring best practices in design and implementation",
+          "Conducting assessments of development efforts and feasibility for upcoming projects and features"
         ],
-        "workExperience": [
-            {
-                "companyName": "Bell",
-                "role": "Lead UI developer (consultant)",
-                "duration": {
-                    "startDate": "2014-06",
-                    "endDate": ""
-                },                
-                "location": {
-                    "country": "Canada",
-                    "province": "ON",
-                    "city": "Mississauga"
-                },
-                "responsibilities": [
-                    "Developing new sections, components, applications and features for various Bell websites",
-                    "Implementing performance enhancements to improve key metrics",
-                    "Offering technical guidance in UI development, ensuring best practices in design and implementation",
-                    "Conducting assessments of development efforts and feasibility for upcoming projects and features"
-                ],
-                "highlights": [
-                    "Led the creation of the first responsive UI frameworks for Bell.ca Shop and Support websites",
-                    "Served as the lead UI consultant in the transition to responsive design for Bell.ca Shop and Support websites",
-                    "Authored multiple high-profile pages and components, including the current homepage and global navigation"
-                ],
-                "technologies": "HTML, CSS, JavaScript, MVC.NET / C# / Razor, Adobe CS suite, Team Foundation Server, Agile and Waterfall development, React, Node.js, GIT, Angular, Java / Spring Boot / FreeMarker, SVN"
-            },
-            {
-                "companyName": "Canadian Tire",
-                "role": "Front-End Web developer",
-                "duration": {
-                    "startDate": "2013-03",
-                    "endDate": "2014-06"
-                },                
-                "location": {
-                    "country": "Canada",
-                    "province": "ON",
-                    "city": "Toronto"
-                },
-                "responsibilities": [
-                    "Developing new components, functionalities, and layouts for canadiantire.ca, along with various microsites",
-                    "Converting websites to Adobe CQ5 (currently Adobe Experience Manager) and implementing mobile-first responsive design",
-                    "Providing technical guidance and support to other development teams within the organization",
-                    "Conducting evaluations of third-party vendor work to ensure adherence to Canadian Tire's quality standards"
-                ],
-                "highlights": [
-                    "Developed user interface components and managed the CMS integration for the first microsites built in-house using CQ5 (currently Adobe Experience Manager)"
-                ],
-                "technologies": "HTML5, CSS3, LESS, Adobe CS, Twitter Bootstrap, JavaScript, Grunt, JSP, PHP, SVN, Node.js, GIT, CVS, Blue Martini CMS, AEM (Adobe CQ5), Joomla, Adobe Scene 7, Agile development"
-            },
-            {
-                "companyName": "DPI",
-                "role": "Web-to-print developer (consultant)",
-                "duration": {
-                    "startDate": "2013-02",
-                    "endDate": "2014-01"
-                },                
-                "location": {
-                    "country": "USA (remote position)",
-                    "province": "GA",
-                    "city": "Atlanta"
-                },
-                "responsibilities": [
-                    "Setting up a scalable and reusable Pageflex Studio project structure",
-                    "Creating dynamic document templates",
-                    "Designing and programming interactive Pageflex Storefront web interfaces",
-                    "Developing .NET-based plug-ins"
-                ],
-                "highlights": [],
-                "technologies": "Pageflex Storefront, HTML, CSS, JavaScript, Adobe CS suite, C#"
-            },
-            {
-                "companyName": "The Printing House Limited (TPH)",
-                "role": "Web-to-print Developer",
-                "duration": {
-                    "startDate": "2007-05",
-                    "endDate": "2013-03"
-                },                
-                "location": {
-                    "country": "Canada",
-                    "province": "ON",
-                    "city": "Toronto"
-                },
-                "responsibilities": [
-                    "Leading sales meetings and product demonstrations for the company's Web-to-print solution",
-                    "Configuring Pageflex Storefront portals, developing variable document templates, and scripting conditional behaviors",
-                    "Coordinating testing sessions and releases",
-                    "Conducting comprehensive user training sessions",
-                    "Providing customer support and assisting participating TPH managers",
-                    "Contributing to the development of custom Pageflex Storefront extensions"
-                ],
-                "highlights": [
-                    "Played a key role in defining and crafting the interface, features, and functionality of the company's Web-to-print solution",
-                    "Successfully created over 40 customized Web-to-print portals for the company's clients",
-                    "Achieved a twofold increase in transaction volume through Web-to-print portals",
-                    "Effectively encouraged the adoption of Web-to-print portals across the company's branches"
-                ],               
-                "technologies": "HTML, CSS, JavaScript and libraries, C#, Pageflex Storefront, Adobe Flash and libraries, Photoshop, Illustrator, Acrobat, Indesign"
-            },
-            {
-                "companyName": "Shopping.com (an eBay company)",
-                "role": "Content Specialist",
-                "duration": {
-                    "startDate": "2006-01",
-                    "endDate": "2007-02"
-                },                
-                "location": {
-                    "country": "Israel",
-                    "province": "",
-                    "city": "Netanya"
-                },
-                "responsibilities": [
-                    "Identifying and addressing content-related issues in product databases",
-                    "Conducting systematic competitor research and delivering insightful reports to the Content Management Team"                 
-                ],
-                "highlights": [],               
-                "technologies": "MS SQL"
-            },
-            {
-                "companyName": "CGFX / ATOM Macrcom",
-                "role": "Web Designer, CMS Integrator",
-                "duration": {
-                    "startDate": "2005-01",
-                    "endDate": "2006-01"
-                },                
-                "location": {
-                    "country": "Israel",
-                    "province": "",
-                    "city": "Rehovot"
-                },
-                "responsibilities": [
-                    "Designing templates for the company's custom PHP-based CMS"
-                ],
-                "highlights": [],               
-                "technologies": "HTML, CSS, Photoshop, 3DS MAX"
-            },
-            {
-                "companyName": "Dmax",
-                "role": "Graphic Designer",
-                "duration": {
-                    "startDate": "2002-01",
-                    "endDate": "2003-01"
-                },                
-                "location": {
-                    "country": "Malta",
-                    "province": "",
-                    "city": "Gzira"
-                },
-                "responsibilities": [
-                    "Designing various promotional materials"
-                ],
-                "highlights": [],               
-                "technologies": "HTML, CSS, Photoshop, Quark Xpress, Macromedia Freehand, Flash"
-            },
-            {
-                "companyName": "ASP. Consulting Group",
-                "role": "Web Designer",
-                "duration": {
-                    "startDate": "2001-01",
-                    "endDate": "2003-01"
-                },                
-                "location": {
-                    "country": "Malta",
-                    "province": "",
-                    "city": "Sliema"
-                },
-                "responsibilities": [
-                    "Managing ASP's corporate website and intranet portal"
-                ],
-                "highlights": [],               
-                "technologies": "HTML, CSS, Adobe Photoshop, Macromedia Flash"
-            }
-        ]
-    } 
+        "highlights": [
+          "Led the creation of the first responsive UI frameworks for Bell.ca Shop and Support websites",
+          "Served as the lead UI consultant in the transition to responsive design for Bell.ca Shop and Support websites",
+          "Authored multiple high-profile pages and components, including the current homepage and global navigation"
+        ],
+        "technologies": "HTML, CSS, JavaScript, MVC.NET / C# / Razor, Adobe CS suite, Team Foundation Server, Agile and Waterfall development, React, Node.js, GIT, Angular, Java / Spring Boot / FreeMarker, SVN"
+      },
+      {
+        "companyName": "Canadian Tire",
+        "role": "Front-End Web developer",
+        "duration": {
+          "startDate": "2013-03",
+          "endDate": "2014-06"
+        },
+        "location": {
+          "country": "Canada",
+          "province": "ON",
+          "city": "Toronto"
+        },
+        "responsibilities": [
+          "Developing new components, functionalities, and layouts for canadiantire.ca, along with various microsites",
+          "Converting websites to Adobe CQ5 (currently Adobe Experience Manager) and implementing mobile-first responsive design",
+          "Providing technical guidance and support to other development teams within the organization",
+          "Conducting evaluations of third-party vendor work to ensure adherence to Canadian Tire's quality standards"
+        ],
+        "highlights": [
+          "Developed user interface components and managed the CMS integration for the first microsites built in-house using CQ5 (currently Adobe Experience Manager)"
+        ],
+        "technologies": "HTML5, CSS3, LESS, Adobe CS, Twitter Bootstrap, JavaScript, Grunt, JSP, PHP, SVN, Node.js, GIT, CVS, Blue Martini CMS, AEM (Adobe CQ5), Joomla, Adobe Scene 7, Agile development"
+      },
+      {
+        "companyName": "DPI",
+        "role": "Web-to-print developer (consultant)",
+        "duration": {
+          "startDate": "2013-02",
+          "endDate": "2014-01"
+        },
+        "location": {
+          "country": "USA (remote position)",
+          "province": "GA",
+          "city": "Atlanta"
+        },
+        "responsibilities": [
+          "Setting up a scalable and reusable Pageflex Studio project structure",
+          "Creating dynamic document templates",
+          "Designing and programming interactive Pageflex Storefront web interfaces",
+          "Developing .NET-based plug-ins"
+        ],
+        "highlights": [],
+        "technologies": "Pageflex Storefront, HTML, CSS, JavaScript, Adobe CS suite, C#"
+      },
+      {
+        "companyName": "The Printing House Limited (TPH)",
+        "role": "Web-to-print Developer",
+        "duration": {
+          "startDate": "2007-05",
+          "endDate": "2013-03"
+        },
+        "location": {
+          "country": "Canada",
+          "province": "ON",
+          "city": "Toronto"
+        },
+        "responsibilities": [
+          "Leading sales meetings and product demonstrations for the company's Web-to-print solution",
+          "Configuring Pageflex Storefront portals, developing variable document templates, and scripting conditional behaviors",
+          "Coordinating testing sessions and releases",
+          "Conducting comprehensive user training sessions",
+          "Providing customer support and assisting participating TPH managers",
+          "Contributing to the development of custom Pageflex Storefront extensions"
+        ],
+        "highlights": [
+          "Played a key role in defining and crafting the interface, features, and functionality of the company's Web-to-print solution",
+          "Successfully created over 40 customized Web-to-print portals for the company's clients",
+          "Achieved a twofold increase in transaction volume through Web-to-print portals",
+          "Effectively encouraged the adoption of Web-to-print portals across the company's branches"
+        ],
+        "technologies": "HTML, CSS, JavaScript and libraries, C#, Pageflex Storefront, Adobe Flash and libraries, Photoshop, Illustrator, Acrobat, Indesign"
+      },
+      {
+        "companyName": "Shopping.com (an eBay company)",
+        "role": "Content Specialist",
+        "duration": {
+          "startDate": "2006-01",
+          "endDate": "2007-02"
+        },
+        "location": {
+          "country": "Israel",
+          "province": "",
+          "city": "Netanya"
+        },
+        "responsibilities": [
+          "Identifying and addressing content-related issues in product databases",
+          "Conducting systematic competitor research and delivering insightful reports to the Content Management Team"
+        ],
+        "highlights": [],
+        "technologies": "MS SQL"
+      },
+      {
+        "companyName": "CGFX / ATOM Macrcom",
+        "role": "Web Designer, CMS Integrator",
+        "duration": {
+          "startDate": "2005-01",
+          "endDate": "2006-01"
+        },
+        "location": {
+          "country": "Israel",
+          "province": "",
+          "city": "Rehovot"
+        },
+        "responsibilities": [
+          "Designing templates for the company's custom PHP-based CMS"
+        ],
+        "highlights": [],
+        "technologies": "HTML, CSS, Photoshop, 3DS MAX"
+      },
+      {
+        "companyName": "Dmax",
+        "role": "Graphic Designer",
+        "duration": {
+          "startDate": "2002-01",
+          "endDate": "2003-01"
+        },
+        "location": {
+          "country": "Malta",
+          "province": "",
+          "city": "Gzira"
+        },
+        "responsibilities": ["Designing various promotional materials"],
+        "highlights": [],
+        "technologies": "HTML, CSS, Photoshop, Quark Xpress, Macromedia Freehand, Flash"
+      },
+      {
+        "companyName": "ASP. Consulting Group",
+        "role": "Web Designer",
+        "duration": {
+          "startDate": "2001-01",
+          "endDate": "2003-01"
+        },
+        "location": {
+          "country": "Malta",
+          "province": "",
+          "city": "Sliema"
+        },
+        "responsibilities": [
+          "Managing ASP's corporate website and intranet portal"
+        ],
+        "highlights": [],
+        "technologies": "HTML, CSS, Adobe Photoshop, Macromedia Flash"
+      }
+    ]
+  }
 }

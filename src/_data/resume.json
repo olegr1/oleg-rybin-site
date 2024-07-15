@@ -21,6 +21,19 @@
       { "name": "Web accessibility", "years": "5" },
       { "name": "Web performance", "years": "5" }
     ],
+    "skillHighlights": [
+      "Assessing feasibility and development effort based on mockups, UX wireframes, and requirement documents.",
+      "Translating designs into pixel-perfect, mobile-first, responsive, and cross-browser HTML layouts.",
+      "Building interactive UI components using JavaScript, libraries, and frameworks—from jQuery to React.",
+      "Expert-level CSS authoring, including the creation of custom responsive UI frameworks.",
+      "Developing with an accessibility-first mindset and ensuring existing sites meet WCAG AA+ accessibility standards.",
+      "Advanced understanding of performance considerations, optimizing existing sites' performance",
+      "Working on Agile teams using industry-standard project management tools such as Jira and Confluence.",
+      "Collaborating with design and UX teams using tools such as Figma and InVision.",
+      "Authoring, editing and optimizing assets such as raster and vector images and videos using Adobe CS.",
+      "Full command of VCS systems such as GIT, SVN and TFS, performing branching, merges and conflict resolution.",
+      "Use of modern Node.js-based tools such as bundlers, code linters, transpilers and task-runners."
+    ],
     "workExperience": [
       {
         "companyName": "Bell",
@@ -136,7 +149,7 @@
           "Conducting systematic competitor research and delivering insightful reports to the Content Management Team"
         ],
         "highlights": [],
-        "technologies": "MS SQL"
+        "technologies": ""
       },
       {
         "companyName": "CGFX / ATOM Macrcom",

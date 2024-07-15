@@ -210,8 +210,11 @@ function generateResume() {
       ],
     });
 
-    childrenArray.push(renderSectonTitle("Key skills and years of experience"));
-    childrenArray.push(skillsTable);
+    childrenArray.push(renderSectonTitle("Key skills"));
+    resumeData.skillHighlights.forEach((element) => {
+      childrenArray.push(renderExpBullet(element, "bullet-points"));
+    });
+    //childrenArray.push(skillsTable);
 
     return childrenArray;
   };
@@ -296,20 +299,22 @@ function generateResume() {
         });
       }
 
-      childrenArray.push(renderExpSectonTitle("Technologies"));
+      if (element.technologies !== "") {
+        childrenArray.push(renderExpSectonTitle("Technologies"));
 
-      childrenArray.push(
-        new Paragraph({
-          children: [
-            new TextRun({
-              text: commaToBulletSeparated(element.technologies),
-              font: "Arial",
-              size: 20,
-              italics: true,
-            }),
-          ],
-        })
-      );
+        childrenArray.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: commaToBulletSeparated(element.technologies),
+                font: "Arial",
+                size: 20,
+                italics: true,
+              }),
+            ],
+          })
+        );
+      }
 
       if (index + 1 < resumeData.workExperience.length) {
         childrenArray.push(line);

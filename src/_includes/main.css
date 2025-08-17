@@ -130,10 +130,17 @@ body {
   background-color: var(--body-bg);
   color: var(--text-color-main);
   font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main:focus {
   outline: none;
+}
+
+main {
+  flex: 1;
 }
 
 .or-nobr {

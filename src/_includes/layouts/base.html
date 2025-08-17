@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>{{resume.contents.name}} | {{resume.contents.role}}</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{resume.contents.intro[0]}}" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  {% set js %} {% include "main.js" %} {% endset %}
-  {% set css %} {% include "main.css" %} {% endset %}
-  <style>{{ css | cssmin | safe }}</style>
-  <script>{{ js | jsmin | safe }}</script>
-</head>
-<body>
-  <a href="#orMain" class="or-skip-to-main-link">Skip to main content</a>
+  <head>
+    <title>{{resume.contents.name}} | {{resume.contents.role}}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{resume.contents.intro[0]}}" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    {% set js %} {% include "main.js" %} {% endset %} {% set css %} {% include
+    "main.css" %} {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+    <script>
+      {
+        {
+          js | jsmin | safe;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#orMain" class="or-skip-to-main-link">Skip to main content</a>
 
-  {{ content | safe }}
+    {{ content | safe }}
 
-<footer class="or-footer">
-  <div class="container">
-      <div class="or-footer-content">
-          <a class="or-back-to-top-link" href="#orTop">Back to top</a>
+    <footer class="or-footer">
+      <div class="container">
+        <div class="or-footer-content">
+          <!-- <a class="or-back-to-top-link" href="#orTop">Back to top</a> -->
           <div class="or-footer-copyright">© Oleg Rybin, 2024</div>
-      </div>        
-  </div>
-</footer>
+        </div>
+      </div>
+    </footer>
 
-  <svg tabindex="-1" focusable="false" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
+    <svg
+      tabindex="-1"
+      focusable="false"
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
         <symbol id="icon-print" viewBox="0 0 30 30">
-            <path d="M7.64 2.12h14.72V5.8H7.64V2.12zM27.88 7.64H2.12c-1.01 0-1.84.83-1.84 1.84v9.2c0 1.01.83 1.84 1.84 1.84h5.52v7.36h14.72v-7.36h5.52c1.01 0 1.84-.83 1.84-1.84v-9.2c0-1.01-.83-1.84-1.84-1.84zM3.96 13.16c-1.02 0-1.84-.82-1.84-1.84s.82-1.84 1.84-1.84 1.84.82 1.84 1.84-.82 1.84-1.84 1.84zm16.56 12.88H9.48v-9.2h11.04v9.2z"></path>
+          <path
+            d="M7.64 2.12h14.72V5.8H7.64V2.12zM27.88 7.64H2.12c-1.01 0-1.84.83-1.84 1.84v9.2c0 1.01.83 1.84 1.84 1.84h5.52v7.36h14.72v-7.36h5.52c1.01 0 1.84-.83 1.84-1.84v-9.2c0-1.01-.83-1.84-1.84-1.84zM3.96 13.16c-1.02 0-1.84-.82-1.84-1.84s.82-1.84 1.84-1.84 1.84.82 1.84 1.84-.82 1.84-1.84 1.84zm16.56 12.88H9.48v-9.2h11.04v9.2z"
+          ></path>
         </symbol>
         <symbol id="icon-location" viewBox="0 0 30 30">
-          <path d="M15 .21c-5.11 0-9.25 4.14-9.25 9.25C5.75 18.7 15 29.79 15 29.79s9.25-11.09 9.25-20.34c0-5.1-4.14-9.24-9.25-9.24zM15 15c-3.06 0-5.55-2.48-5.55-5.55S11.94 3.91 15 3.91s5.55 2.48 5.55 5.55S18.06 15 15 15z"></path>
-      </symbol>
-      <symbol id="icon-linkedin" viewBox="0 0 30 30">
-        <path d="M26.52,0.19H3.48c-1.82,0-3.29,1.47-3.29,3.29v23.04c0,1.82,1.47,3.29,3.29,3.29h23.04
+          <path
+            d="M15 .21c-5.11 0-9.25 4.14-9.25 9.25C5.75 18.7 15 29.79 15 29.79s9.25-11.09 9.25-20.34c0-5.1-4.14-9.24-9.25-9.24zM15 15c-3.06 0-5.55-2.48-5.55-5.55S11.94 3.91 15 3.91s5.55 2.48 5.55 5.55S18.06 15 15 15z"
+          ></path>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 30 30">
+          <path
+            d="M26.52,0.19H3.48c-1.82,0-3.29,1.47-3.29,3.29v23.04c0,1.82,1.47,3.29,3.29,3.29h23.04
         c1.82,0,3.29-1.47,3.29-3.29V3.48C29.81,1.66,28.34,0.19,26.52,0.19z M9.14,25.7H4.73V11.43h4.42V25.7z M6.91,9.57
         c-1.44,0-2.61-1.18-2.61-2.63c0-1.45,1.17-2.63,2.61-2.63s2.61,1.18,2.61,2.63C9.53,8.39,8.36,9.57,6.91,9.57z M25.7,25.7h-4.4
         v-7.49c0-2.05-0.78-3.2-2.41-3.2c-1.77,0-2.69,1.19-2.69,3.2v7.49h-4.24V11.43h4.24v1.92c0,0,1.27-2.36,4.3-2.36
-        c3.03,0,5.19,1.85,5.19,5.67V25.7z"/>
-      </symbol>
-      <symbol id="icon-github" viewBox="0 0 30 30">
-        <path d="M15.01.49C6.84.49.24 7.14.24 15.37c0 6.58 4.23 12.14 10.1 14.11.73.15 1-.32 1-.71 0-.34-.02-1.53-.02-2.76-4.11.89-4.96-1.77-4.96-1.77-.66-1.72-1.64-2.17-1.64-2.17-1.34-.91.1-.91.1-.91 1.49.1 2.27 1.53 2.27 1.53 1.32 2.27 3.45 1.63 4.3 1.23.12-.96.51-1.63.93-2-3.28-.34-6.72-1.63-6.72-7.34 0-1.63.59-2.96 1.52-3.99-.15-.37-.66-1.9.15-3.94 0 0 1.25-.39 4.06 1.53a14.153 14.153 0 0 1 7.38 0c2.81-1.92 4.06-1.53 4.06-1.53.81 2.04.29 3.57.15 3.94.95 1.03 1.52 2.36 1.52 3.99 0 5.71-3.45 6.97-6.75 7.34.54.47 1 1.35 1 2.76 0 2-.02 3.6-.02 4.09 0 .39.27.86 1 .71 5.87-1.97 10.1-7.54 10.1-14.11C29.78 7.14 23.15.49 15.01.49z" style="fill-rule:evenodd;clip-rule:evenodd"/>
-      </symbol>
-    </defs>
-  </svg>
-
-</body>
+        c3.03,0,5.19,1.85,5.19,5.67V25.7z"
+          />
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 30 30">
+          <path
+            d="M15.01.49C6.84.49.24 7.14.24 15.37c0 6.58 4.23 12.14 10.1 14.11.73.15 1-.32 1-.71 0-.34-.02-1.53-.02-2.76-4.11.89-4.96-1.77-4.96-1.77-.66-1.72-1.64-2.17-1.64-2.17-1.34-.91.1-.91.1-.91 1.49.1 2.27 1.53 2.27 1.53 1.32 2.27 3.45 1.63 4.3 1.23.12-.96.51-1.63.93-2-3.28-.34-6.72-1.63-6.72-7.34 0-1.63.59-2.96 1.52-3.99-.15-.37-.66-1.9.15-3.94 0 0 1.25-.39 4.06 1.53a14.153 14.153 0 0 1 7.38 0c2.81-1.92 4.06-1.53 4.06-1.53.81 2.04.29 3.57.15 3.94.95 1.03 1.52 2.36 1.52 3.99 0 5.71-3.45 6.97-6.75 7.34.54.47 1 1.35 1 2.76 0 2-.02 3.6-.02 4.09 0 .39.27.86 1 .71 5.87-1.97 10.1-7.54 10.1-14.11C29.78 7.14 23.15.49 15.01.49z"
+            style="fill-rule: evenodd; clip-rule: evenodd"
+          />
+        </symbol>
+      </defs>
+    </svg>
+  </body>
 </html>

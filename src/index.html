@@ -5,7 +5,7 @@ layout: layouts/base.html
 <header class="or-header" id="orTop">
   <div class="container">
     <div class="or-header-content">
-      <a
+      <!-- <a
         href="/assets/docs/oleg_rybin_front_end_dev_resume.docx"
         class="or-print-button"
       >
@@ -13,7 +13,7 @@ layout: layouts/base.html
           <use tabindex="-1" focusable="false" xlink:href="#icon-print"></use>
         </svg>
         Print version
-      </a>
+      </a> -->
 
       <div class="or-header-photo-wrap">
         <img
@@ -30,7 +30,7 @@ layout: layouts/base.html
       </h1>
 
       <p class="or-contacts">
-        <a
+        <!-- <a
           href="https://{{resume.contents.github}}"
           title="This site's GitHub repo"
           class="or-contacts-icon-link"
@@ -46,7 +46,7 @@ layout: layouts/base.html
               xlink:href="#icon-github"
             ></use>
           </svg>
-        </a>
+        </a> -->
         <a
           href="https://{{resume.contents.linkedin}}"
           title="Oleg Rybin's LinkedIn page"
@@ -73,17 +73,23 @@ layout: layouts/base.html
           >+1 (647) 401<span>401</span>-1468</a
         >
       </p>
-      <div class="or-intro">
+      <!-- <div class="or-intro">
         {% for paragraph in resume.contents.intro %}
         <p>{{paragraph}}</p>
         {% endfor %}
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
 
 <main tabindex="-1" id="orMain">
-  <section class="or-section or-section--skills">
+  <div class="container">
+    <h1 class="or-section-header or-intro">
+      I'm currently updating the site. Please check back later.
+    </h1>
+  </div>
+
+  <!-- <section class="or-section or-section--skills">
     <div class="container">
       <div class="or-section-content">
         <h2 class="or-section-header">Key skills</h2>
@@ -159,5 +165,5 @@ layout: layouts/base.html
         {% endfor %}
       </div>
     </div>
-  </section>
+  </section> -->
 </main>
